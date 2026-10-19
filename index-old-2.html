@@ -1,0 +1,2943 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#26130a">
+<meta name="description" content="Explore JEGOL Furniture's bedroom sets, dressing tables, living room and dining furniture, office furniture, kids' furniture, wardrobes, kitchens and doors. Visit our showroom in Harar, Ethiopia.">
+<title>JEGOL Furniture — Thoughtful Furniture for Everyday Living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — overwritten at runtime from JEGOL_CONFIG.theme
+   ============================================================ */
+:root{
+  --bg:#f2e6d3;
+  --surface:#fbf5ea;
+  --surface-hover:#f5ebda;
+  --text:#2a1408;
+  --text-dim:rgba(42,20,8,.70);
+  --border:rgba(104,46,12,.28);
+  --accent:#823c13;
+  --accent-soft:#a9561f;
+
+  --font-body:'Montserrat',system-ui,sans-serif;
+  --font-mono:'Montserrat',system-ui,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+
+  --logo-size:58px;
+  --radius-pill:40px;
+  --content-max:920px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--accent);color:#fff;padding:.8rem 1.2rem;border-radius:0 0 12px 0;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ============================================================
+   HERO — full viewport, dark, image background
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:var(--bg);
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-size:cover;
+  background-position:62% center;
+  background-repeat:no-repeat;
+  background-color:var(--bg);
+  transition:transform 8s ease;
+}
+.hero-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(8,7,5,.62) 0%,
+    rgba(8,7,5,.38) 40%,
+    rgba(8,7,5,.96) 100%
+  );
+  pointer-events:none;
+}
+.hero-bg.has-image:hover{transform:scale(1.02)}
+.hero-click{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  border:0;
+  padding:0;
+  background:none;
+  cursor:zoom-in;
+}
+.hero-inner{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  min-height:100svh;
+  padding:1.8rem 5vw 2.2rem;
+  justify-content:space-between;
+  pointer-events:none;
+}
+.hero-inner a,
+.hero-inner button{pointer-events:auto}
+
+/* --- top bar --- */
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.85rem}
+.logo-circle{
+  position:relative;
+  width:var(--logo-size);
+  height:var(--logo-size);
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex-shrink:0;
+  background-size:cover;
+  background-position:center;
+  transition:border-color .25s,transform .25s;
+}
+.logo-circle.has-image{border-color:var(--accent);background-color:#f6efe2;background-size:84%;background-repeat:no-repeat;background-position:center 55%}
+.logo-circle .mark{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:1.35rem;
+  color:var(--accent);
+  line-height:1;
+}
+.logo-circle.has-image .mark{display:none}
+.word-mark{
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.28em;
+  color:var(--text);
+  line-height:1;
+}
+.word-mark small{
+  display:block;
+  margin-top:.4rem;
+  font-family:var(--font-mono);
+  font-size:.55rem;
+  letter-spacing:.22em;
+  color:var(--text-dim);
+  font-weight:400;
+}
+
+/* --- menu --- */
+.menu{display:flex;align-items:center;gap:1.9rem}
+.menu a{
+  font-family:var(--font-mono);
+  font-size:.66rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  position:relative;
+  padding:.35rem 0;
+  transition:color .25s;
+}
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:1px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .35s ease;
+}
+.menu a:hover{color:var(--text)}
+.menu a:hover::after{transform:scaleX(1)}
+.menu a.cta{
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:.55rem 1.05rem;
+  border-radius:var(--radius-pill);
+  transition:background .25s,color .25s,border-color .25s;
+}
+.menu a.cta::after{display:none}
+.menu a.cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* --- hero text --- */
+.hero-text{align-self:flex-start;max-width:var(--content-max);padding-bottom:1.6rem}
+.hero-text .eyebrow{
+  font-family:var(--font-mono);
+  font-size:.66rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent-soft);
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+  margin-bottom:1.6rem;
+}
+.hero-text .eyebrow::before{content:"";width:24px;height:1px;background:var(--accent-soft)}
+.hero-title{
+  font-size:clamp(2.8rem,8.6vw,7.2rem);
+  font-weight:800;
+  letter-spacing:-.04em;
+  line-height:.95;
+  color:var(--text);
+}
+.hero-title em{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:-.045em;
+  color:var(--accent);
+}
+.hero-sub{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(1rem,1.5vw,1.25rem);
+  color:var(--text-dim);
+  max-width:46ch;
+  line-height:1.55;
+  margin-top:1.6rem;
+}
+.hero-cta{display:flex;gap:.75rem;margin-top:2.2rem;flex-wrap:wrap}
+.hero-cta .btn{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:.95rem 1.6rem;
+  border-radius:var(--radius-pill);
+  border:1px solid var(--accent);
+  transition:background .25s,color .25s,transform .2s,border-color .25s;
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+}
+.hero-cta .btn-primary{background:var(--accent);color:#fff}
+.hero-cta .btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);transform:translateY(-2px)}
+.hero-cta .btn-ghost{color:var(--text);background:transparent;border-color:var(--border)}
+.hero-cta .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* --- hero edit button --- */
+.hero-edit{
+  position:absolute;
+  z-index:4;
+  right:5vw;
+  top:calc(1.8rem + var(--logo-size) + .9rem);
+  background:rgba(29,25,21,.82);
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  padding:.55rem 1rem;
+  font-family:var(--font-mono);
+  font-size:.58rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  opacity:0;
+  transition:opacity .25s,background .25s,border-color .25s;
+}
+.hero:hover .hero-edit,
+.hero-edit:focus-visible{opacity:1}
+.hero-edit:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+.trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg)}
+.trust-inner{
+  max-width:1500px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:0 5vw;
+}
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  padding:1.4rem 1.4rem 1.4rem 0;
+  border-right:1px solid var(--border);
+}
+.trust-item:last-child{border-right:0;padding-right:0}
+.trust-icon{
+  width:38px;height:38px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(189,107,59,.15);
+  color:var(--accent);
+  font-size:1.05rem;
+  flex-shrink:0;
+}
+.trust-item strong{display:block;font-size:.82rem;font-weight:700}
+.trust-item span{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  letter-spacing:.08em;
+  color:var(--text-dim);
+  margin-top:.3rem;
+  text-transform:uppercase;
+}
+
+/* ============================================================
+   CATALOG SECTION
+   ============================================================ */
+.catalog{padding:clamp(3rem,7vw,6rem) 5vw;background:var(--bg)}
+.catalog-inner{max-width:1500px;margin:0 auto}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:2rem;
+  flex-wrap:wrap;
+  margin-bottom:2.4rem;
+}
+.section-head .eyebrow{
+  font-family:var(--font-mono);
+  font-size:.64rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--accent-soft);
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+}
+.section-head .eyebrow::before{content:"";width:20px;height:1px;background:var(--accent-soft)}
+.section-title{
+  font-size:clamp(1.9rem,3.8vw,3.2rem);
+  font-weight:800;
+  letter-spacing:-.04em;
+  line-height:1.02;
+  margin-top:.7rem;
+  max-width:24ch;
+}
+.section-title em{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:500;
+  color:var(--accent);
+  letter-spacing:-.04em;
+}
+.section-lead{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--text-dim);
+  max-width:42ch;
+  line-height:1.55;
+}
+
+/* ---------- Category preview grid ---------- */
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-bottom:clamp(2rem,4vw,3rem);
+}
+.category-card{
+  background:var(--surface);
+  padding:1.7rem 1.5rem 1.9rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  transition:background .25s;
+  position:relative;
+  overflow:hidden;
+  min-height:180px;
+  text-align:left;
+}
+.category-card::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:var(--card-accent,var(--accent));
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .35s ease;
+}
+.category-card:hover{background:var(--surface-hover)}
+.category-card:hover::before{transform:scaleY(1)}
+.category-card.selected{background:var(--surface-hover)}
+.category-card.selected::before{transform:scaleY(1)}
+.card-num{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--card-accent,var(--accent));
+  font-size:1rem;
+}
+.card-name{
+  font-size:1.15rem;
+  font-weight:800;
+  letter-spacing:-.01em;
+  line-height:1.15;
+  text-transform:uppercase;
+}
+.card-desc{
+  font-size:.76rem;
+  line-height:1.55;
+  color:var(--text-dim);
+  margin-top:auto;
+}
+.card-arrow{
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-top:.4rem;
+  transition:color .25s,gap .25s;
+}
+.category-card:hover .card-arrow{color:var(--card-accent,var(--accent));gap:.7rem}
+
+/* ---------- Catalog tools ---------- */
+.catalog-tools{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  flex-wrap:wrap;
+  padding:1.2rem 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  margin-bottom:2rem;
+}
+.search-field{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  background:var(--surface);
+  padding:0 1rem;
+  height:44px;
+  flex:1 1 260px;
+  max-width:420px;
+  transition:border-color .2s;
+}
+.search-field:focus-within{border-color:var(--accent)}
+.search-field span{color:var(--text-dim);font-size:1rem}
+.search-field input{
+  background:transparent;
+  border:0;
+  outline:0;
+  color:var(--text);
+  width:100%;
+  font-family:var(--font-body);
+  font-size:.82rem;
+}
+.search-field input::placeholder{color:var(--text-dim)}
+.clear-btn{
+  background:none;
+  border:0;
+  color:var(--text-dim);
+  font-size:1.1rem;
+  line-height:1;
+  padding:.2rem .4rem;
+  border-radius:50%;
+  transition:color .2s,background .2s;
+}
+.clear-btn:hover{color:var(--text);background:var(--surface-hover)}
+.catalog-tools select{
+  appearance:none;
+  -webkit-appearance:none;
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  background:var(--surface);
+  height:44px;
+  padding:0 2.6rem 0 1.1rem;
+  font-family:var(--font-mono);
+  font-size:.64rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text);
+  cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%23f5f0e8' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 1.1rem center;
+  transition:border-color .2s;
+}
+.catalog-tools select:hover{border-color:var(--accent)}
+.catalog-tools select option{background:var(--surface);color:var(--text)}
+.catalog-count{
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  letter-spacing:.1em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-left:auto;
+}
+.tool-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  padding:.7rem 1.2rem;
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text);
+  background:transparent;
+  transition:border-color .2s,color .2s,transform .2s;
+}
+.tool-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+
+/* ============================================================
+   PRODUCT SECTIONS
+   ============================================================ */
+.product{
+  padding:clamp(2.4rem,5vw,4rem) 0;
+  border-bottom:1px solid var(--border);
+  scroll-margin-top:1.5rem;
+}
+.product:last-child{border-bottom:0}
+.product-head{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:2.2rem;
+  margin-bottom:2rem;
+}
+.product-title-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.4rem}
+.product-number{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--accent);
+  font-size:1.1rem;
+}
+.product h3{
+  font-size:clamp(1.7rem,3vw,2.7rem);
+  letter-spacing:-.035em;
+  margin:.3rem 0 .5rem;
+  font-weight:800;
+  color:var(--text);
+}
+.product-subtitle{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--text-dim);
+  font-size:1rem;
+}
+.product-desc{
+  max-width:62ch;
+  color:var(--text-dim);
+  font-size:.83rem;
+  line-height:1.7;
+  margin:.9rem 0;
+}
+.tag-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
+.tag-list span{
+  font-family:var(--font-mono);
+  font-size:.58rem;
+  letter-spacing:.1em;
+  padding:.45rem .6rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--text-dim);
+}
+.specs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  align-self:start;
+}
+.spec{padding:.9rem;background:var(--surface);min-height:70px}
+.spec-label{
+  font-family:var(--font-mono);
+  font-size:.56rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.swatch{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
+.spec-value{font-size:.75rem;line-height:1.45;margin-top:.5rem;color:var(--text)}
+
+/* ---------- Gallery groups ---------- */
+.gallery-group{margin-top:1.6rem}
+.group-title{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin-bottom:.9rem;
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  font-weight:500;
+  text-transform:uppercase;
+  color:var(--text);
+}
+.group-title::after{content:"";height:1px;background:var(--border);flex:1}
+.group-title small{
+  font-weight:400;
+  letter-spacing:.08em;
+  color:var(--text-dim);
+  text-transform:none;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(var(--grid-cols,4),minmax(0,1fr));
+  gap:1rem;
+}
+
+/* ---------- Product cards ---------- */
+.product-card{min-width:0}
+.product-photo{
+  position:relative;
+  aspect-ratio:4/4.8;
+  border-radius:14px;
+  overflow:hidden;
+  background:#26201a;
+  border:1px solid var(--border);
+}
+.product-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .45s;
+}
+.product-photo:hover img{transform:scale(1.035)}
+.photo-open{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:zoom-in;
+}
+.photo-open[disabled]{cursor:default}
+.photo-open img.is-broken{opacity:0}
+.img-fallback{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:.9rem;
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  background:linear-gradient(150deg,#26201a,#1a1612);
+}
+.product-photo.empty{background:linear-gradient(150deg,#26201a,#1a1612)}
+.empty-add{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  background:none;
+  padding:0;
+  display:block;
+  text-align:left;
+}
+.empty-inner{
+  position:absolute;
+  inset:12px;
+  border:1px dashed rgba(245,240,232,.22);
+  border-radius:9px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:.8rem;
+  color:var(--text-dim);
+  gap:.45rem;
+}
+.empty-inner b{font-size:.7rem;color:var(--text);letter-spacing:.08em;text-transform:uppercase}
+.empty-inner span{font-size:.62rem}
+.empty-inner em{font-style:normal;color:var(--accent-soft);font-family:var(--font-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase}
+.photo-edit{
+  position:absolute;
+  z-index:2;
+  right:.6rem;
+  top:.6rem;
+  background:rgba(20,17,14,.82);
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  padding:.45rem .7rem;
+  font-family:var(--font-mono);
+  font-size:.55rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  opacity:0;
+  transition:opacity .2s,background .2s;
+}
+.product-photo:hover .photo-edit,
+.product-photo:focus-within .photo-edit,
+.photo-edit:focus-visible{opacity:1}
+.photo-edit:hover{background:var(--accent);border-color:var(--accent)}
+.product-caption{padding:.7rem .1rem 0}
+.product-caption b{font-size:.78rem;line-height:1.4;display:block;color:var(--text)}
+.product-caption p{font-size:.7rem;line-height:1.5;color:var(--text-dim);margin:.35rem 0 0}
+.ref-badge{
+  display:inline-block;
+  margin-top:.5rem;
+  font-family:var(--font-mono);
+  font-size:.52rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent-soft);
+  background:rgba(189,107,59,.14);
+  padding:.35rem .5rem;
+  border-radius:4px;
+}
+
+/* ---------- Empty / no-results state ---------- */
+.empty-state{
+  padding:3rem 1.5rem;
+  text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  color:var(--text-dim);
+  font-size:.85rem;
+  line-height:1.6;
+}
+.empty-state b{color:var(--text);display:block;margin-bottom:.4rem;font-size:.95rem}
+.no-results{display:none}
+
+/* ============================================================
+   CONTACT BAND
+   ============================================================ */
+.contact{padding:0 5vw clamp(3rem,6vw,5rem);background:var(--bg)}
+.contact-band{
+  max-width:1500px;
+  margin:0 auto;
+  background:linear-gradient(135deg,#1d1915 0%,#221b15 100%);
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:clamp(2rem,4vw,3.8rem);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:2.6rem;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.contact-band::before{
+  content:"";
+  position:absolute;
+  right:-80px;top:-80px;
+  width:320px;height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(189,107,59,.22),transparent 65%);
+  pointer-events:none;
+}
+.contact-band .eyebrow{
+  font-family:var(--font-mono);
+  font-size:.64rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--accent-soft);
+}
+.contact-band h2{
+  font-size:clamp(1.9rem,3.6vw,3rem);
+  font-weight:800;
+  letter-spacing:-.04em;
+  line-height:1.02;
+  margin:.7rem 0 1rem;
+}
+.contact-band h2 em{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:500;
+  color:var(--accent);
+  letter-spacing:-.04em;
+}
+.contact-band p{color:var(--text-dim);font-size:.9rem;line-height:1.7;max-width:46ch}
+.contact-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+.contact-actions .btn{
+  font-family:var(--font-mono);
+  font-size:.66rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:.85rem 1.35rem;
+  border-radius:var(--radius-pill);
+  border:1px solid var(--border);
+  color:var(--text);
+  transition:background .25s,border-color .25s,transform .2s,color .25s;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+}
+.contact-actions .btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.contact-actions .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.contact-actions .btn.primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:#fff}
+.contact-list{border-top:1px solid var(--border);position:relative;z-index:1}
+.contact-row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid var(--border);
+  align-items:baseline;
+}
+.contact-row span{
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.contact-row strong{font-size:.88rem;font-weight:600;line-height:1.55}
+.contact-row a{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px}
+.contact-row a:hover{color:var(--accent)}
+
+
+/* ---------- Social icons ---------- */
+.socials{display:flex;flex-wrap:wrap;gap:.55rem}
+.socials a{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border);
+  display:grid;place-items:center;
+  color:var(--text);
+  transition:background .25s,border-color .25s,color .25s,transform .2s;
+}
+.socials a svg{width:19px;height:19px;display:block}
+.socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
+.footer-socials{flex-basis:100%}
+.footer-bottom{flex-basis:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.powered{margin-right:3.4rem;display:inline-flex;align-items:center;gap:.6rem;color:var(--text-dim);transition:color .25s}
+.powered img{
+  width:30px;height:30px;border-radius:50%;object-fit:cover;
+  border:1px solid var(--border);background:#000;
+  transition:border-color .25s,transform .25s;
+}
+.powered:hover{color:var(--text)}
+.powered:hover img{border-color:var(--accent);transform:scale(1.08)}
+.powered b{font-weight:500;color:var(--accent-soft)}
+.contact-row .socials a{color:var(--text)}
+.contact-row .socials a:hover{color:#fff}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{
+  padding:2.6rem 5vw 2rem;
+  max-width:1500px;
+  margin:0 auto;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1.4rem;
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.footer-left{display:flex;align-items:center;gap:.85rem}
+.footer-mark{
+  width:38px;height:38px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  display:grid;place-items:center;
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--accent);
+  font-size:1rem;
+  flex-shrink:0;
+  background-size:cover;
+  background-position:center;
+}
+.footer-mark.has-image{color:transparent;background-color:#f6efe2;background-size:84%;background-repeat:no-repeat;background-position:center 55%}
+.footer-note{display:block;line-height:1.6;text-transform:none;letter-spacing:.06em;font-size:.62rem}
+.footer-links{display:flex;gap:1.3rem;flex-wrap:wrap}
+.footer-links a:hover{color:var(--accent)}
+
+/* ============================================================
+   FLOATING UI
+   ============================================================ */
+.to-top{
+  position:fixed;
+  bottom:1.4rem;
+  right:1.4rem;
+  z-index:30;
+  border:0;
+  background:var(--accent);
+  color:#fff;
+  width:44px;height:44px;
+  border-radius:50%;
+  font-size:1.1rem;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s,transform .2s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-3px);background:var(--accent-soft)}
+.toast{
+  position:fixed;
+  bottom:1.4rem;
+  left:50%;
+  transform:translate(-50%,20px);
+  z-index:100;
+  background:var(--text);
+  color:var(--bg);
+  padding:.75rem 1.2rem;
+  border-radius:var(--radius-pill);
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  letter-spacing:.08em;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  max-width:90vw;
+  text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ============================================================
+   IMAGE FRAME
+   ============================================================ */
+.image-frame{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:clamp(8px,2.5vw,30px)}
+.image-frame[hidden]{display:none}
+.image-frame-backdrop{
+  position:absolute;
+  inset:0;
+  border:0;
+  padding:0;
+  background:rgba(10,8,6,.94);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  cursor:zoom-out;
+}
+.image-frame-panel{
+  position:relative;
+  z-index:1;
+  width:min(1120px,100%);
+  max-height:100%;
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:clamp(10px,1.5vw,16px);
+  box-shadow:0 40px 90px rgba(0,0,0,.7);
+}
+.image-frame-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.image-frame-counter{
+  font-family:var(--font-mono);
+  font-size:.6rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent-soft);
+}
+.image-frame-tools{display:flex;align-items:center;gap:.35rem}
+.image-frame-tools button,
+.image-frame-tools a{
+  width:36px;height:36px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  display:grid;
+  place-items:center;
+  font-size:1rem;
+  line-height:1;
+  text-decoration:none;
+  transition:background .18s,transform .18s,border-color .18s;
+}
+.image-frame-tools button:hover,
+.image-frame-tools a:hover{background:var(--surface-hover);border-color:var(--accent);transform:translateY(-1px)}
+.image-frame-stage{
+  position:relative;
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0a0908;
+  border-radius:10px;
+  overflow:auto;
+  box-shadow:inset 0 0 0 1px rgba(245,240,232,.06);
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+.image-frame-stage img{
+  display:block;
+  margin:auto;
+  max-width:100%;
+  max-height:min(70vh,760px);
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  cursor:zoom-in;
+  -webkit-user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+}
+.image-frame-stage img.zoomed{max-width:none;max-height:none;cursor:zoom-out}
+.image-frame-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  width:46px;height:46px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:rgba(29,25,21,.94);
+  color:var(--text);
+  font-size:1.5rem;
+  display:grid;
+  place-items:center;
+  line-height:1;
+  box-shadow:0 8px 22px rgba(0,0,0,.4);
+  transition:background .2s,border-color .2s;
+}
+.image-frame-nav:hover{background:var(--accent);border-color:var(--accent)}
+.image-frame-nav[hidden]{display:none}
+.image-frame-nav.prev{left:8px}
+.image-frame-nav.next{right:8px}
+.image-frame-caption{padding:0 .25rem .15rem}
+.image-frame-caption strong{display:block;font-size:.92rem;line-height:1.35;color:var(--text)}
+.image-frame-caption span{display:block;font-size:.74rem;color:var(--text-dim);margin-top:.3rem;line-height:1.5;max-width:78ch}
+.image-frame-hint{
+  margin-left:auto;
+  font-family:var(--font-mono);
+  font-size:.56rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1024px){
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .product-grid{--grid-cols:3}
+  .product-head{grid-template-columns:1fr;gap:1.4rem}
+}
+@media(max-width:820px){
+  :root{--logo-size:48px}
+  .menu{gap:1.1rem}
+  .menu a{font-size:.58rem;letter-spacing:.14em}
+  .menu a.hide-sm{display:none}
+  .hero-inner{padding:1.3rem 5vw 1.8rem}
+  .hero-title{font-size:clamp(2.6rem,13vw,4.6rem)}
+  .hero-sub{font-size:1rem}
+  .hero-edit{opacity:1;top:calc(1.3rem + var(--logo-size) + .6rem);right:5vw}
+  .trust-inner{grid-template-columns:1fr;padding:0}
+  .trust-item{border-right:0;border-bottom:1px solid var(--border);padding:1.1rem 5vw}
+  .trust-item:last-child{border-bottom:0}
+  .contact-band{grid-template-columns:1fr;gap:1.8rem;border-radius:20px}
+  .contact-row{grid-template-columns:1fr;gap:.25rem}
+  .footer{flex-direction:column;align-items:flex-start}
+  .product-grid{--grid-cols:2;gap:.75rem}
+  .photo-edit{opacity:1}
+  .catalog-count{margin-left:0;flex-basis:100%}
+}
+@media(max-width:560px){
+  .word-mark{display:none}
+  .menu a{font-size:.55rem}
+  .menu a.cta{padding:.45rem .8rem;letter-spacing:.1em}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1;justify-content:center}
+  .category-grid{grid-template-columns:1fr}
+  .category-card{min-height:150px}
+  .product-grid{--grid-cols:2}
+  .image-frame{padding:8px}
+  .image-frame-panel{border-radius:12px;gap:.5rem}
+  .image-frame-stage img{max-height:58vh}
+  .image-frame-nav{width:40px;height:40px;font-size:1.25rem}
+  .image-frame-nav.prev{left:4px}
+  .image-frame-nav.next{right:4px}
+  .image-frame-hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+}
+
+/* ============================================================
+   JEGOL IDENTITY LAYER — walnut · sand · cream
+   Palette sampled from the official wooden-sign logo and scenes:
+   walnut #682E0C / #823C13 / #94491A · deep #26130A · sand #D7B693 · cream #F2E6D3
+   Light pages (cream plaster) with dark walnut bands (hero, contact, footer, viewer).
+   ============================================================ */
+:root{
+  --em:#a9561f;                 /* italic accent words on light */
+  --on-wood:#f8ecd9;
+  --ring:8px;                   /* wooden frame thickness */
+  --mat:10px;                   /* cream mat between frame and photo */
+  --plaster:url("jegol-plaster.png");
+  --plaster-dark:url("jegol-plaster-dark.png");
+  --wood:url("jegol-wood.jpg");
+  /* brushed walnut: grain image under a soft top-light */
+  --wood-fill:linear-gradient(180deg,rgba(255,224,178,.22),rgba(0,0,0,.30)),url("jegol-wood.jpg");
+  /* the logo's three hanging discs, as an ornament */
+  --crown:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 34'><path fill='%23823c13' d='M0 0H140V8H0Z'/><circle cx='35' cy='19' r='11' fill='%23823c13'/><circle cx='70' cy='19' r='11' fill='%23823c13'/><circle cx='105' cy='19' r='11' fill='%23823c13'/></svg>");
+  --crown-light:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 34'><path fill='%23e0a06a' d='M0 0H140V8H0Z'/><circle cx='35' cy='19' r='11' fill='%23e0a06a'/><circle cx='70' cy='19' r='11' fill='%23e0a06a'/><circle cx='105' cy='19' r='11' fill='%23e0a06a'/></svg>");
+  --chair:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none' stroke='%23823c13' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M34 56V32Q34 14 60 14Q86 14 86 32V56' fill='%23823c13' fill-opacity='.12'/><path d='M34 56Q21 56 21 69V78Q21 84 27 84H93Q99 84 99 78V69Q99 56 86 56'/><path d='M34 68Q60 74 86 68M60 22V50M45 30V50M75 30V50M29 84L24 106M91 84L96 106'/></svg>");
+}
+/* dark walnut scope: anything inside re-reads the tokens in dark */
+.hero,.contact-band,.footer,.image-frame,.toast{
+  --bg:#26130a;--surface:#32190d;--surface-hover:#3f2213;
+  --text:#f6e9d5;--text-dim:rgba(246,233,213,.76);--border:rgba(226,176,120,.36);
+  --accent:#e0a06a;--accent-soft:#f0be8a;--em:#eaa96c;
+}
+
+/* ---------- surfaces ---------- */
+body{background-color:var(--bg);background-image:var(--plaster);font-weight:400;letter-spacing:.005em}
+.trust,.contact{background:transparent}
+.catalog{
+  background-color:transparent;
+  background-image:radial-gradient(ellipse 70% 100% at 12% 0%,rgba(255,243,214,.75),transparent 70%),var(--plaster);
+  background-size:100% 1000px,240px 240px;background-repeat:no-repeat,repeat;
+}
+.hero{background-color:#26130a;background-image:var(--plaster-dark)}
+.hero-bg{background-color:#1a0d06}
+.hero-bg::after{background:linear-gradient(180deg,rgba(38,19,10,.64) 0%,rgba(38,19,10,.34) 42%,rgba(38,19,10,.94) 100%)}
+
+/* ---------- typography: serif display like the logo wordmark, spaced sans for labels ---------- */
+.hero-title,.section-title,.contact-band h2,.product h3{
+  font-family:var(--font-display);font-weight:800;letter-spacing:-.012em;text-transform:uppercase;line-height:1.04;
+}
+.hero-title{font-size:clamp(2.6rem,7.2vw,6.2rem);line-height:.98}
+.section-title{font-size:clamp(1.8rem,3.4vw,2.9rem)}
+.contact-band h2{font-size:clamp(1.8rem,3.2vw,2.7rem)}
+.product h3{font-size:clamp(1.6rem,2.7vw,2.4rem)}
+.hero-title em,.section-title em,.contact-band h2 em{
+  font-family:var(--font-display);font-style:italic;font-weight:600;text-transform:none;letter-spacing:-.01em;
+  color:var(--em);
+}
+.hero-sub,.section-lead,.product-subtitle{
+  font-family:var(--font-display);font-style:italic;font-weight:500;line-height:1.45;color:var(--text-dim);
+}
+.hero-sub{font-size:clamp(1.1rem,1.6vw,1.4rem)}
+.section-lead{font-size:1.2rem}
+.product-subtitle{font-size:1.15rem}
+.eyebrow,.menu a,.btn,.tool-btn,.group-title,.spec-label,.tag-list span,.card-arrow,.catalog-count,
+.contact-row span,.footer,.ref-badge,.empty-inner em,.image-frame-counter,.image-frame-hint,.toast,
+.catalog-tools select,.trust-item span,.photo-edit,.hero-edit,.skip-link,.word-mark small{font-family:var(--font-body);font-weight:500}
+.eyebrow{letter-spacing:.3em;font-weight:600}
+.word-mark{font-family:var(--font-display);font-weight:800;font-size:1.2rem;letter-spacing:.07em;color:var(--text)}
+.word-mark small{font-size:.5rem;letter-spacing:.46em;margin-top:.45rem;color:var(--text-dim)}
+.card-name{font-weight:700;letter-spacing:.05em;font-size:1rem}
+.card-num,.product-number{font-family:var(--font-display);font-style:italic;font-weight:600;font-size:1.5rem;color:var(--card-accent,var(--em))}
+.product-number{color:var(--em)}
+.product-desc,.card-desc,.contact-band p{line-height:1.75}
+.trust-item strong{font-weight:600}
+
+/* ---------- logo badge (wooden roundel on cream) ---------- */
+.logo-circle,.footer-mark{
+  border:0;background-color:#f6ecd9;
+  box-shadow:0 0 0 2px rgba(224,160,106,.75),0 8px 22px rgba(0,0,0,.4);
+}
+.logo-circle.has-image,.footer-mark.has-image{
+  background-color:#f6ecd9;background-size:92%;background-repeat:no-repeat;background-position:center;border:0;
+}
+
+/* ---------- buttons ---------- */
+.hero-cta .btn,.contact-actions .btn,.tool-btn,.menu a.cta{border-radius:3px;font-weight:600;letter-spacing:.2em}
+/* on dark walnut: cream button, espresso text */
+.hero-cta .btn-primary,.contact-actions .btn.primary{
+  background:linear-gradient(180deg,#fcf2df,#e8d1aa);border-color:#f6e2bd;color:#2a1408;
+  box-shadow:0 10px 28px rgba(0,0,0,.38),inset 0 1px 0 #fff;
+}
+.hero-cta .btn-primary:hover,.contact-actions .btn.primary:hover{background:linear-gradient(180deg,#fff9ec,#f1dcb8);border-color:#fff;color:#2a1408}
+.hero-cta .btn-ghost,.contact-actions .btn,.menu a.cta{border-color:rgba(246,233,213,.55);color:var(--text)}
+.hero-cta .btn-ghost:hover,.contact-actions .btn:hover{border-color:#f6e2bd;color:#fff;background:rgba(246,233,213,.12)}
+.contact-actions .btn.primary{color:#2a1408}
+.menu a.cta:hover,.hero-edit:hover,.photo-edit:hover,.socials a:hover,.image-frame-nav:hover{
+  background:#f6e9d5;border-color:#f6e9d5;color:#2a1408!important;
+}
+.menu a::after{background:#e0a06a}
+.menu a:hover,.menu a.active{color:#fff}
+.menu a.active::after{transform:scaleX(1)}
+/* on light: walnut-wood button */
+.tool-btn{border-color:rgba(130,60,19,.55);color:var(--accent)}
+.tool-btn:hover{background-image:var(--wood-fill);background-size:auto,300px 150px;border-color:#4e2008;color:var(--on-wood);transform:translateY(-1px)}
+.to-top{
+  background-image:var(--wood-fill);background-size:auto,220px 110px;background-color:#823c13;color:var(--on-wood);
+  box-shadow:0 8px 22px rgba(38,19,10,.45),0 0 0 2px rgba(248,236,217,.85);
+}
+.to-top:hover{background-color:#94491a;filter:brightness(1.12)}
+.skip-link{background:#823c13;color:#fff}
+.toast{border-radius:3px;font-weight:600}
+.footer-links a:hover,.contact-row a:hover{color:#fff}
+.powered b{color:var(--accent)}
+
+/* ---------- trust strip & ornament ---------- */
+.trust{border-color:var(--border)}
+.trust-item{border-right-color:var(--border)}
+.trust-icon{background:var(--surface);border:1px solid rgba(130,60,19,.55);color:var(--accent);box-shadow:inset 0 0 0 3px rgba(215,182,147,.35)}
+.catalog-inner::before,.contact-band::after{
+  content:"";display:block;width:84px;height:21px;margin:0 0 2rem;background:var(--crown) left center/contain no-repeat;
+}
+.contact-band::after{position:absolute;left:clamp(2rem,4vw,3.8rem);bottom:clamp(1.4rem,2.6vw,2.2rem);margin:0;opacity:.7;background-image:var(--crown-light);z-index:1}
+
+/* ---------- wood-framed photos: walnut frame · cream mat · photo ---------- */
+.product-photo{
+  border:0;border-radius:4px;background:var(--surface);
+  box-shadow:0 16px 32px rgba(60,30,10,.24),0 3px 8px rgba(60,30,10,.16);
+  transition:box-shadow .35s,transform .35s;
+}
+.product-photo:hover{box-shadow:0 22px 44px rgba(60,30,10,.32),0 4px 10px rgba(60,30,10,.2)}
+.product-photo .photo-open{inset:calc(var(--ring) + var(--mat));width:calc(100% - 2*(var(--ring) + var(--mat)));height:calc(100% - 2*(var(--ring) + var(--mat)));overflow:hidden}
+/* the wooden frame — gradient ring masked out of the walnut grain */
+.product-photo::after{
+  content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;padding:var(--ring);pointer-events:none;
+  background-image:linear-gradient(135deg,rgba(255,226,182,.34),rgba(0,0,0,0) 40%,rgba(0,0,0,.34)),var(--wood);
+  background-size:auto,420px 210px;background-color:#6b3516;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+/* inner bevel line around the photo */
+.product-photo::before{
+  content:"";position:absolute;inset:calc(var(--ring) + var(--mat) - 1px);z-index:2;pointer-events:none;
+  border:1px solid rgba(78,32,8,.5);box-shadow:0 0 0 1px rgba(255,255,255,.55);
+}
+.photo-edit{z-index:4;right:calc(var(--ring) + var(--mat) + .5rem);top:calc(var(--ring) + var(--mat) + .5rem);border-radius:3px;background:rgba(38,19,10,.9);border-color:rgba(224,160,106,.65);color:#f6e9d5}
+.product-caption b{font-weight:600}
+.ref-badge{background:transparent;border:1px solid rgba(130,60,19,.4);color:var(--accent);border-radius:3px;letter-spacing:.16em}
+
+/* placeholders: cream plaster panel with the chair mark */
+.product-photo.empty,.img-fallback{
+  background:var(--plaster),radial-gradient(ellipse 80% 60% at 50% 38%,#fff8e8,#ead9bb 80%);
+}
+.empty-inner{
+  inset:calc(var(--ring) + var(--mat));border:1px solid rgba(78,32,8,.45);border-radius:1px;gap:.55rem;
+  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(215,182,147,.18));
+  box-shadow:inset 0 0 0 4px rgba(255,255,255,.35);
+  transition:border-color .3s,background .3s;
+}
+.empty-inner::before{content:"";width:64px;height:64px;margin-bottom:.35rem;opacity:.95;background:var(--chair) center/contain no-repeat}
+.empty-inner::after{content:"";position:absolute;left:50%;bottom:12px;width:46px;height:12px;transform:translateX(-50%);background:var(--crown) center/contain no-repeat;opacity:.55}
+.empty-inner b{color:var(--text);letter-spacing:.22em;font-weight:700}
+.empty-inner span{color:var(--text-dim)}
+.empty-inner em{color:var(--accent);font-weight:700}
+.empty-add:hover .empty-inner{border-color:#823c13;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(215,182,147,.3))}
+
+/* ---------- cards, specs, tools ---------- */
+.category-grid{border-color:var(--border);background:var(--border);box-shadow:0 14px 34px rgba(60,30,10,.12)}
+.category-card{background-color:var(--surface);background-image:var(--plaster)}
+.category-card::before{width:4px;background:var(--card-accent,#823c13)}
+.category-card:hover,.category-card.selected{background-color:var(--surface-hover)}
+.specs{border-color:var(--border);background:var(--border);border-radius:3px;box-shadow:0 10px 26px rgba(60,30,10,.1)}
+.spec{background-color:var(--surface);background-image:var(--plaster)}
+.swatch{border-color:rgba(38,19,10,.3)}
+.tag-list span{border-radius:3px;border-color:rgba(130,60,19,.4);color:var(--text)}
+.search-field,.catalog-tools select{border-radius:3px;background-color:var(--surface);border-color:rgba(130,60,19,.4)}
+.search-field:focus-within,.catalog-tools select:hover{border-color:#823c13}
+.catalog-tools{border-color:var(--border)}
+.catalog-tools select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%23823c13' stroke-width='1.8' fill='none' stroke-linecap='round'/></svg>")}
+.group-title::after{background:linear-gradient(90deg,rgba(130,60,19,.55),transparent)}
+.product{border-bottom-color:var(--border)}
+.empty-state{border-radius:4px;border-color:var(--border);background-image:var(--plaster)}
+
+/* ---------- contact band: dark walnut panel in a wooden frame ---------- */
+.contact-band{
+  border:0;border-radius:4px;color:var(--text);
+  background-image:var(--plaster-dark),linear-gradient(135deg,#34190c 0%,#26130a 60%,#2f170a 100%);
+  box-shadow:0 30px 70px rgba(38,19,10,.45);
+}
+.contact-band::before{
+  content:"";position:absolute;left:0;top:0;right:0;bottom:0;width:auto;height:auto;border-radius:inherit;padding:7px;z-index:2;pointer-events:none;
+  background-image:linear-gradient(135deg,rgba(255,226,182,.3),rgba(0,0,0,0) 40%,rgba(0,0,0,.4)),var(--wood);
+  background-size:auto,480px 240px;background-color:#6b3516;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.contact-list{border-top-color:var(--border)}
+.contact-row{border-bottom-color:var(--border)}
+.socials a{border-color:rgba(246,233,213,.45)}
+
+/* ---------- footer: full-width dark walnut with a wooden rail ---------- */
+.footer{
+  max-width:none;margin:0;
+  padding:3rem max(5vw,calc((100% - 1450px)/2)) 2rem;
+  background-color:var(--bg);background-image:var(--plaster-dark);border-top:0;color:var(--text-dim);
+}
+.footer::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background-image:var(--wood-fill);background-size:auto,420px 210px;background-color:#6b3516}
+
+/* ---------- lightbox: walnut panel, wooden frame ---------- */
+.image-frame-backdrop{background:rgba(20,10,5,.93)}
+.image-frame-panel{
+  border:0;border-radius:4px;padding:clamp(16px,2.2vw,24px);
+  background-image:var(--plaster-dark),linear-gradient(160deg,#3a1d0e,#26130a);
+  box-shadow:0 40px 100px rgba(0,0,0,.8);
+}
+.image-frame-panel::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:7px;z-index:0;pointer-events:none;
+  background-image:linear-gradient(135deg,rgba(255,226,182,.3),rgba(0,0,0,0) 40%,rgba(0,0,0,.4)),var(--wood);
+  background-size:auto,480px 240px;background-color:#6b3516;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.image-frame-stage{border-radius:2px;background:#170b05;box-shadow:inset 0 0 0 1px rgba(224,160,106,.4)}
+.image-frame-counter{color:var(--accent-soft);letter-spacing:.24em}
+.image-frame-tools button,.image-frame-tools a{border-color:rgba(224,160,106,.5)}
+.image-frame-tools button:hover,.image-frame-tools a:hover{background:rgba(246,233,213,.14);border-color:#f0be8a}
+.image-frame-nav{background:rgba(38,19,10,.92);border-color:rgba(224,160,106,.6)}
+
+/* ---------- fixes ---------- */
+/* 10 category cards in 4 columns left two empty cells showing the hairline colour — let the last card fill the row */
+@media(min-width:1025px){.category-card:last-child:nth-child(4n+2){grid-column:span 3}}
+/* public mode: set editable:false in JEGOL_CONFIG to hide editing UI and empty slots */
+html.no-edit .photo-edit,html.no-edit .hero-edit,html.no-edit .product-card.is-empty{display:none!important}
+
+/* ---------- small screens ---------- */
+@media(max-width:820px){
+  .hero-title{font-size:clamp(2.3rem,11.5vw,4rem)}
+  :root{--ring:6px;--mat:8px}
+  .empty-inner::before{width:48px;height:48px}
+}
+@media(max-width:560px){
+  .catalog-inner::before{width:68px}
+  .contact-band::after{display:none}
+  .word-mark{display:none}
+}
+
+/* ============================================================
+   PRINT — force light for paper
+   ============================================================ */
+@media print{
+  body{background:#fff!important;color:#000!important}
+  .hero{min-height:auto;padding:1rem 0;background:#fff!important}
+  .hero-bg,.hero-click,.hero-edit,.menu,.to-top,.toast,.image-frame,.skip-link,
+  .catalog-tools,.hero-cta,.photo-edit{display:none!important}
+  .hero-inner{min-height:auto;padding:1rem 0;color:#000;pointer-events:auto}
+  .hero-title,.hero-title em,.hero-sub,.hero-text .eyebrow{color:#000!important}
+  .word-mark,.word-mark small{color:#000!important}
+  .logo-circle,.footer-mark{border-color:#ccc!important;color:#000!important}
+  .logo-circle .mark,.footer-mark{color:#000!important}
+  .trust,.trust-item{border-color:#ccc!important}
+  .trust-item span,.trust-item strong{color:#000!important}
+  .category-grid{background:#ccc!important;border-color:#ccc!important;grid-template-columns:repeat(4,1fr)!important}
+  .category-card{background:#fff!important;color:#000!important;min-height:auto!important;padding:.9rem!important}
+  .category-card::before{display:none!important}
+  .card-num{color:#000!important}
+  .card-desc,.card-arrow{color:#555!important}
+  .section-head .eyebrow{color:#000!important}
+  .section-head .eyebrow::before{background:#000!important}
+  .section-title,.section-title em{color:#000!important}
+  .section-lead{color:#444!important}
+  .product{border-color:#ccc!important;break-inside:avoid;padding:1.6rem 0!important}
+  .product h3,.product h3 *{color:#000!important}
+  .product-subtitle,.product-desc{color:#444!important}
+  .product-number{color:#000!important}
+  .tag-list span{border-color:#ccc!important;color:#444!important}
+  .specs{background:#ccc!important;border-color:#ccc!important}
+  .spec{background:#fff!important;color:#000!important}
+  .spec-label{color:#666!important}
+  .spec-value{color:#000!important}
+  .product-grid{--grid-cols:4!important;gap:.5rem!important}
+  .product-photo{break-inside:avoid;border-color:#ccc!important;background:#eee!important}
+  .product-caption b{color:#000!important}
+  .product-caption p{color:#555!important}
+  .ref-badge{color:#000!important;background:#eee!important}
+  .group-title,.group-title small{color:#000!important}
+  .group-title::after{background:#ccc!important}
+  .contact-band{background:#f5f5f5!important;border:1px solid #ccc!important}
+  .contact-band::before{display:none!important}
+  .contact-band h2,.contact-band h2 em{color:#000!important}
+  .contact-band p{color:#444!important}
+  .contact-band .eyebrow{color:#000!important}
+  .contact-list,.contact-row{border-color:#ccc!important}
+  .contact-row span{color:#666!important}
+  .contact-row strong,.contact-row a{color:#000!important}
+  .footer{color:#666!important;border-color:#ccc!important}
+  .product-card.is-empty,.catalog-inner::before,.contact-band::after,.product-photo::before,.product-photo::after,.contact-band::before,.image-frame-panel::before{display:none!important}
+  .product-photo{box-shadow:none!important;border:1px solid #ccc!important}
+  .hero-bg::after{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#catalog">Skip to catalog</a>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JEGOL_CONFIG — edit this one object to customize everything
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+const JEGOL_CONFIG = {
+
+  /* ══════════════ BRAND ══════════════ */
+  brand: {
+    name:    "JEGOL",
+    subname: "FURNITURE",
+    monogram:"J",
+    logo:    "jegol-logo.webp",
+    title:   "JEGOL Furniture — Thoughtful Furniture for Everyday Living",
+    description: "Explore JEGOL Furniture's bedroom sets, dressing tables, living room and dining furniture, office furniture, kids' furniture, wardrobes, kitchens and doors. Visit our showroom in Harar, Ethiopia."
+  },
+
+  /* ══════════════ THEME (dark — deepseek look) ══════════════ */
+  theme: {
+    bg:           "#f2e6d3",
+    surface:      "#fbf5ea",
+    surfaceHover: "#f5ebda",
+    text:         "#2a1408",
+    textDim:      "rgba(42,20,8,.70)",
+    border:       "rgba(104,46,12,.28)",
+    accent:       "#823c13",
+    accentSoft:   "#a9561f",
+
+    fontBody:    "'Montserrat', system-ui, sans-serif",
+    fontMono:    "'Montserrat', system-ui, sans-serif",
+    fontDisplay: "'Playfair Display', Georgia, serif",
+
+    logoSize:   "58px",
+    contentMax: "920px",
+    gridColumns: 4
+  },
+
+  /* ══════════════ MENU (top right of hero) ══════════════ */
+  menu: [
+    { label: "Rooms",   href: "#categories" },
+    { label: "Catalog", href: "#catalog" },
+    { label: "Contact", href: "#contact", cta: true }
+  ],
+
+  /* ══════════════ HERO ══════════════ */
+  hero: {
+    eyebrow:  "JEGOL FURNITURE · HARAR, ETHIOPIA",
+    /* <br> for line breaks, <em> for the italic accent word */
+    title:    'Built for<br><em>comfortable</em><br>living.',
+    subtitle: "Furniture that brings your spaces together — from restful bedrooms to welcoming living rooms and productive offices.",
+    ctas: [
+      { label: "Explore Catalog",    href: "#catalog",                     variant: "primary", icon: "↓" },
+      { label: "Ask About a Design", href: "https://t.me/jegolfurniture",  variant: "ghost",   icon: "↗" }
+    ],
+    image:    "jegol-image-42.webp",
+    imageAlt: "JEGOL Furniture living room inspiration",
+    editLabel: "Change hero photo ＋",
+    captionTitle: "Make room for living."
+  },
+
+  /* ══════════════ TRUST STRIP ══════════════ */
+  trust: [
+    { icon: "⌂", title: "Room-by-room selection",      text: "Bedroom · Living · Office" },
+    { icon: "✳", title: "Sizes & finishes on request", text: "Discussed with our team" },
+    { icon: "↗", title: "Local showroom",              text: "Harar, Ethiopia" }
+  ],
+
+  /* ══════════════ CATALOG SECTION HEAD ══════════════ */
+  catalog: {
+    eyebrow: "The JEGOL Collection",
+    title:   'Find your next <em>favourite</em> piece.',
+    lead:    "Browse our furniture categories and design references. Tap any photo to open it in the image frame. Sizes, finishes and prices are available on request.",
+    searchPlaceholder: "Search furniture, materials or finishes…",
+    allCategoriesLabel: "All categories",
+    printLabel: "Print catalog ↗",
+    groupOwnLabel: "In the showroom",
+    groupRefLabel: "Reference designs",
+    ownUnit: "showroom photos",
+    refUnit: "reference designs",
+    emptyPhotoTitle: "Photo placeholder",
+    emptyPhotoCta: "＋ Add a photo",
+    replacePhotoCta: "Replace ＋",
+    refBadge: "Reference design",
+    allCard: {
+      name: "Full Catalog",
+      desc: "Every design, filterable by room or material.",
+      arrow: "Explore →"
+    },
+    noResults: {
+      title: "No matching furniture found.",
+      text:  "Try another search term, or choose “All categories”."
+    }
+  },
+
+  /* ══════════════ CONTACT ══════════════ */
+  contact: {
+    eyebrow: "Let's Talk Furniture",
+    title:   'Good spaces start <em>here.</em>',
+    desc:    "Tell us which design caught your eye. Contact the JEGOL Furniture team to ask about sizes, finishes, availability and delivery.",
+    actions: [
+      { label: "Call 0982828233",       href: "tel:+251982828233",            variant: "primary" },
+      { label: "Message on Telegram ↗", href: "https://t.me/jegolfurniture",  variant: "ghost" }
+    ],
+    details: [
+      { label: "Showroom", value: "Harar, Ethiopia" },
+      { label: "Phone",    html: '<a href="tel:+251982828233">0982828233</a> · <a href="tel:+251982828235">0982828235</a>' },
+      { label: "Telegram", html: '<a href="https://t.me/jegolfurniture">t.me/jegolfurniture ↗</a>' },
+      { label: "Prices",   value: "On request · sizes and finishes discussed with our team" },
+      { label: "Hours",    value: "Open 24 hours" }
+    ]
+  },
+
+  /* ══════════════ SOCIALS (icons shown in Contact + Footer) ══════════════ */
+  socials: [
+    { key:"instagram", label:"Instagram",        href:"https://www.instagram.com/jegolfurniture" },
+    { key:"facebook",  label:"Facebook Page",    href:"https://www.facebook.com/JegolFurniture/" },
+    { key:"tiktok",    label:"TikTok",           href:"https://www.tiktok.com/@jegolfurniture" },
+    { key:"telegram",  label:"Telegram Channel", href:"https://t.me/Jegolfurniture" },
+    { key:"youtube",   label:"YouTube Channel",  href:"https://www.youtube.com/@JEGOLFURNITURE" },
+    { key:"threads",   label:"Threads",          href:"https://www.threads.net/@jegolfurniture" }
+  ],
+
+  /* ══════════════ POWERED-BY CREDIT (footer) ══════════════ */
+  credit: {
+    label: "Powered by",
+    name:  "TopG",
+    logo:  "topg-logo.webp",
+    href:  "https://guledz.github.io/Guledhassen/"
+  },
+
+  /* ══════════════ FOOTER ══════════════ */
+  footer: {
+    tagline: "THOUGHTFUL FURNITURE FOR EVERYDAY LIVING",
+    links: [
+      { label: "Catalog",    href: "#catalog" },
+      { label: "Contact",    href: "#contact" },
+      { label: "Telegram ↗", href: "https://t.me/jegolfurniture" },
+      { label: "Call us",    href: "tel:+251982828233" }
+    ],
+    note: "Furniture shown includes showroom photos and reference designs.",
+    copyright: "© 2026 JEGOL FURNITURE · HARAR, ETHIOPIA"
+  },
+
+  /* ══════════════ VIEWER ══════════════ */
+  viewer: {
+    hint: "Swipe · ← → · Esc to close",
+    zoomInLabel:  "Zoom to actual size",
+    zoomOutLabel: "Fit image to frame",
+    downloadLabel:"Download this image",
+    closeLabel:   "Close image frame",
+    counterZoomHint: "tap photo to zoom"
+  },
+
+  /* ══════════════ IMAGE MAP ══════════════
+     All paths are relative — the .webp files sit in the SAME folder
+     as this index.html, so the site works from any folder or domain. */
+  images: {
+    "logo":"jegol-logo.webp",
+    "bb1":"jegol-image-02.webp","bb2":"jegol-image-03.webp","bb3":"jegol-image-04.webp",
+    "bb4":"jegol-image-05.webp","bb5":"jegol-image-06.webp","bb6":"jegol-image-07.webp",
+    "bb7":"jegol-image-08.webp","bb8":"jegol-image-09.webp",
+    "dt1":"jegol-image-10.webp","dt2":"jegol-image-11.webp",
+    "lv1":"jegol-image-12.webp","lv2":"jegol-image-13.webp","lv3":"jegol-image-14.webp",
+    "lv4":"jegol-image-15.webp",
+    "of1":"jegol-image-16.webp","of2":"jegol-image-17.webp","of3":"jegol-image-18.webp",
+    "kd1":"jegol-image-19.webp",
+    "rb1":"jegol-image-20.webp","rb2":"jegol-image-21.webp","rb3":"jegol-image-22.webp",
+    "rb4":"jegol-image-23.webp","rb5":"jegol-image-24.webp","rb6":"jegol-image-25.webp",
+    "rb7":"jegol-image-26.webp","rb8":"jegol-image-27.webp","rb9":"jegol-image-28.webp",
+    "rb10":"jegol-image-29.webp","rb11":"jegol-image-30.webp","rb12":"jegol-image-31.webp",
+    "rl1":"jegol-image-32.webp","rl2":"jegol-image-33.webp",
+    "ro1":"jegol-image-34.webp","ro2":"jegol-image-35.webp","ro3":"jegol-image-36.webp",
+    "ro4":"jegol-image-37.webp",
+    "rs1":"jegol-image-38.webp","rs2":"jegol-image-39.webp","rs3":"jegol-image-40.webp",
+    "rk1":"jegol-image-41.webp",
+    "lv5":"jegol-living-01-silver-taupe-majlis-on-turf.webp","lv6":"jegol-living-02-lattice-panel-majlis-workshop.webp",
+    "lv7":"jegol-living-03-cream-lattice-majlis-showroom.webp","lv8":"jegol-living-04-navy-gold-star-majlis.webp",
+    "rl3":"jegol-living-05-blue-inlay-cream-majlis.webp","rl4":"jegol-living-06-white-lattice-majlis.webp",
+    "rl5":"jegol-living-07-charcoal-jacquard-majlis.webp","rl6":"jegol-living-08-cream-gold-edge-majlis.webp",
+    "rl7":"jegol-living-09-silver-grey-carved-majlis.webp","rl8":"jegol-living-10-navy-velvet-wood-trim-majlis.webp",
+    "rl9":"jegol-living-11-cream-carved-wood-majlis.webp","rl10":"jegol-living-12-mint-leather-majlis.webp",
+    "rl11":"jegol-living-13-powder-blue-satin-majlis.webp","rl12":"jegol-living-14-cream-majlis-gold-ceiling.webp",
+    "rl13":"jegol-living-15-royal-blue-swirl-majlis.webp","rl14":"jegol-living-16-grey-greek-key-sectional.webp",
+    "rl15":"jegol-living-17-grey-gold-octagon-majlis.webp","rl16":"jegol-living-18-floral-medallion-majlis.webp",
+    "rl17":"jegol-living-19-cream-gold-octagon-majlis.webp","rl18":"jegol-living-20-cream-majlis-chandelier-room.webp",
+    "rd1":"jegol-dining-01-sunburst-round-dining-set.webp","rd2":"jegol-dining-02-sunburst-dining-chairs-close.webp",
+    "rd3":"jegol-dining-03-sunburst-dining-set-corner.webp","bb9":"jegol-bedroom-01-cream-gold-frame-bedroom-set.webp",
+    "rb13":"jegol-bedroom-02-arched-headboard-greek-key-bed.webp","rb14":"jegol-bedroom-03-led-panel-headboard-bed.webp",
+    "rt1":"jegol-dressing-01-cream-gold-wardrobe-vanity.webp","rt2":"jegol-dressing-02-round-led-mirror-vanity-wardrobe.webp",
+    "rt3":"jegol-dressing-03-cream-blue-wardrobe-vanity.webp","rt4":"jegol-dressing-04-oak-white-oval-mirror-vanity.webp",
+    "rs4":"jegol-storage-01-grey-wardrobe-display-shelf.webp","rs5":"jegol-storage-02-white-gold-handle-wardrobe.webp",
+    "rs6":"jegol-storage-03-white-glass-bay-wardrobe.webp","rs7":"jegol-storage-04-white-lit-display-column-wardrobe.webp",
+    "rs8":"jegol-storage-05-white-glass-led-wardrobe.webp","rs9":"jegol-storage-06-blue-white-gloss-wardrobe.webp",
+    "rs10":"jegol-storage-07-white-mirror-slat-wardrobe.webp","rs11":"jegol-storage-08-white-black-frame-glass-wardrobe.webp",
+    "rs12":"jegol-storage-09-grey-gold-edge-wardrobe.webp","rs13":"jegol-storage-10-white-sliding-door-wardrobe.webp",
+    "rs14":"jegol-storage-11-gloss-white-grey-wardrobe.webp","rs15":"jegol-storage-12-beige-glass-door-wardrobe.webp",
+    "rs16":"jegol-storage-13-white-glass-hanging-bay-wardrobe.webp","rs17":"jegol-storage-14-charcoal-corner-shelf-wardrobe.webp",
+    "rs18":"jegol-storage-15-blue-white-bedroom-wardrobe-vanity.webp","rc1":"jegol-kids-01-mint-green-kids-wardrobe.webp",
+    "rc2":"jegol-kids-02-walnut-bunk-bed-stair-drawers.webp","rc3":"jegol-kids-03-white-girls-bunk-bed.webp",
+    "rc4":"jegol-kids-04-oak-white-bunk-bed-drawers.webp","rc5":"jegol-kids-05-oak-trim-cutout-bunk-bed.webp",
+    "rc6":"jegol-kids-06-white-bunk-bed-rail-stairs.webp","ok1":"jegol-kitchen-01-marble-pattern-led-kitchen.webp",
+    "ok2":"jegol-kitchen-02-white-marble-look-kitchen.webp","rk2":"jegol-kitchen-03-dusty-pink-l-kitchen.webp",
+    "rk3":"jegol-kitchen-04-taupe-gloss-u-kitchen.webp","rk4":"jegol-kitchen-05-two-tone-marble-backsplash-kitchen.webp",
+    "rk5":"jegol-kitchen-06-white-gloss-wood-niche-kitchen.webp","rk6":"jegol-kitchen-07-mauve-white-fridge-column-kitchen.webp",
+    "rk7":"jegol-kitchen-08-walnut-beige-marble-floor-kitchen.webp","rk8":"jegol-kitchen-09-peninsula-slat-bar-kitchen.webp",
+    "rk9":"jegol-kitchen-10-white-classic-copper-handle-kitchen.webp","rk10":"jegol-kitchen-11-white-blue-black-top-kitchen.webp",
+    "rk11":"jegol-kitchen-12-white-raised-panel-kitchen.webp","rk12":"jegol-kitchen-13-grey-handleless-kitchen.webp",
+    "rk13":"jegol-kitchen-14-white-gloss-beige-upper-kitchen.webp","rk14":"jegol-kitchen-15-mauve-l-led-shelf-kitchen.webp",
+    "rr1":"jegol-doors-01-wenge-twin-glass-door.webp","rr2":"jegol-doors-02-white-two-panel-door.webp",
+    "rr3":"jegol-doors-03-solid-walnut-entrance-door.webp","rr4":"jegol-doors-04-dark-oak-two-panel-door.webp",
+    "rr5":"jegol-doors-05-brown-relief-line-door.webp","rr6":"jegol-doors-06-wenge-metal-inlay-door.webp",
+    "rr7":"jegol-doors-07-beige-two-panel-door.webp","rr8":"jegol-doors-08-dark-walnut-inset-door.webp",
+    "rr9":"jegol-doors-09-mahogany-horizontal-inlay-door.webp","rr10":"jegol-doors-10-walnut-twin-vertical-line-door.webp",
+    "rr11":"jegol-doors-11-brown-horizontal-groove-door.webp","rr12":"jegol-doors-12-cream-vertical-groove-door.webp",
+    "rr13":"jegol-doors-13-flush-white-black-handle-door.webp","rr14":"jegol-doors-14-mahogany-grooved-slab-door.webp",
+    "rr15":"jegol-doors-15-white-flush-door-in-frame.webp","rr16":"jegol-doors-16-white-shaker-two-panel-door.webp",
+    "rr17":"jegol-doors-17-sage-grey-two-panel-door.webp",
+    "dn1":"jegol-dining-04-round-sunburst-table-eight-chairs.webp",
+    "dn2":"jegol-dining-05-marble-top-table-six-cream-chairs.webp",
+    "dn3":"jegol-dining-06-white-gloss-table-mixed-chairs.webp",
+    "dn4":"jegol-dining-07-oak-table-grey-quilted-chairs.webp",
+    "dn5":"jegol-dining-08-white-gloss-table-window-view.webp",
+    "lv9":"jegol-living-21-carved-lattice-majlis-showroom-sign.webp",
+    "lv10":"jegol-living-22-walnut-shell-charcoal-sofa.webp",
+    "lv11":"jegol-living-23-walnut-lounge-chair-cream-cushions.webp",
+    "bb10":"jegol-bedroom-04-walnut-bed-curved-tufted-headboard.webp",
+    "lv12":"jegol-living-24-walnut-shell-charcoal-sofa-wall-sign.webp",
+    "lv13":"jegol-living-25-walnut-wingback-armchair-quilted-cream.webp",
+    "lv14":"jegol-living-26-tan-leather-rolled-arm-sofa.webp",
+    "lv15":"jegol-living-27-walnut-wingback-armchair-portrait.webp",
+    "hero":"jegol-image-42.webp"
+  },
+
+  /* ══════════════ CATEGORIES + PRODUCTS ══════════════ */
+  categories: [
+    {
+      key: "bedroom", name: "BEDROOM", accent: "#823c13",
+      subtitle: "Beds · Nightstands · Mirrors · Full Sets",
+      desc: "Bed designs in velvet, leatherette and lacquer, with gold trim, LED lighting, mirrored nightstands and storage options.",
+      tags: ["BEDS","NIGHTSTANDS","MIRRORS","SETS"],
+      specs: [
+        { label:"MATERIAL",    value:"Velvet / Leatherette / Lacquer",           swatch:"#b89545" },
+        { label:"FINISH",      value:"Cream · Grey · Blue-grey · Black & white", swatch:"#e8e3d6" },
+        { label:"DETAILS",     value:"Gold trim · LED · Storage",                 swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",                                swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"bb1", title:"Blue-grey velvet hexagon bed",    desc:"Gold inserts, bolster roll and mirrored nightstands with wall lamps, shown made up" },
+        { img:"bb2", title:"Blue-grey hexagon bed, set view", desc:"Headboard and two mirrored nightstands without bedding" },
+        { img:"bb3", title:"Cream U-shaped headboard bed",    desc:"Cream leatherette, black quilted accents, tall LED side towers, built-in nightstands" },
+        { img:"bb4", title:"Cream U-shaped bed, angled",      desc:"The same bed from the side" },
+        { img:"bb5", title:"White and gold classic bed",      desc:"Tufted headboard, gold scrolls, marble-print wing sides with lamps, storage ottoman" },
+        { img:"bb6", title:"Grey tubular headboard bed",      desc:"Rounded gold-trimmed headboard, channel-tufted centre, wall lamps, floating nightstands" },
+        { img:"bb7", title:"Black and white lacquer bed",     desc:"Arched headboard, mirrored side panels with sconces and matching nightstands" },
+        { img:"bb8", title:"White hexagon-tufted bed",        desc:"White leatherette headboard, gold inserts, gold-framed mirrors, white nightstands" },
+        { img:"bb9", title:"Cream bedroom set, gold-framed headboard", desc:"Panelled headboard with gold framing, bed, mirrored dresser and nightstands, mattress still wrapped" },
+        { img:"bb10", title:"Walnut bed, curved tufted headboard", desc:"Solid walnut frame with a curved cream button-tufted headboard, linen bedding and a matching nightstand" }
+      ],
+      ref: [
+        { img:"rb1",  title:"Champagne velvet hexagon bed", desc:"Hexagon-tufted headboard and footboard with gold inserts" },
+        { img:"rb2",  title:"Black velvet storage bed",     desc:"Diamond-line headboard and lift-up storage base" },
+        { img:"rb3",  title:"Black matt single bed",        desc:"Platform bed with two side drawers" },
+        { img:"rb4",  title:"Grey crystal-button bed",      desc:"Button-tufted headboard and footboard with crystals" },
+        { img:"rb5",  title:"Grey fabric storage bed",      desc:"Lift-up slatted base and angular headboard" },
+        { img:"rb6",  title:"Grey geometric panel bed",     desc:"LED-backlit headboard on a blue base" },
+        { img:"rb7",  title:"Navy art-deco velvet bed",     desc:"Stepped headboard with gold trim" },
+        { img:"rb8",  title:"Navy bed, oak frame",          desc:"Upholstered bed with two-drawer nightstands" },
+        { img:"rb9",  title:"Green and cream panel bed",    desc:"Leather panels with dark nightstands" },
+        { img:"rb10", title:"Walnut sunburst bed",          desc:"Tan leather sunburst headboard with nightstands" },
+        { img:"rb11", title:"Cream channel-tufted set",     desc:"Bed, nightstands and mirrored dresser" },
+        { img:"rb12", title:"Grey wood-grain full set",     desc:"Bed, nightstands, 3-drawer chest, round mirror, 4-door wardrobe" },
+        { img:"rb13", title:"Arched headboard bed, Greek-key base", desc:"Quilted arched headboard, Greek-key footboard border, mirrored side towers and quilted nightstand" },
+        { img:"rb14", title:"LED panel headboard bed", desc:"Quilted panels in a gold-edged surround, wall lamps and an illuminated floating nightstand" }
+      ]
+    },
+    {
+      key: "dressing", name: "DRESSING TABLES", accent: "#94491a",
+      subtitle: "Vanities · LED Mirrors · Wardrobe Combos",
+      desc: "Dressing tables with lit hexagonal or arched mirrors, gold hardware and side drawer units, made to match a bedroom set. Wardrobe-and-vanity combinations are shown as reference designs.",
+      tags: ["VANITIES","MIRRORS","DRAWERS","WARDROBE COMBOS"],
+      specs: [
+        { label:"MATERIAL",    value:"Lacquer / Mirror / Gold hardware", swatch:"#b07a5a" },
+        { label:"FINISH",      value:"White · Dark grey and gold",        swatch:"#e8e3d6" },
+        { label:"DETAILS",     value:"LED mirror · Drawers",              swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",                        swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"dt1", title:"White lacquer dressing table", desc:"Hexagonal LED mirror, sunburst door and gold ornamental handles" },
+        { img:"dt2", title:"Grey and gold dressing table", desc:"Two arched LED mirrors, gold trim and a side drawer unit" }
+      ],
+      ref: [
+        { img:"rt1", title:"Cream wardrobe with built-in vanity", desc:"Gold-trim arched doors, mirrored vanity with stool, lit shelves and a drawer unit" },
+        { img:"rt2", title:"Wardrobe with round LED mirror vanity", desc:"Gold geometric inlay doors, backlit round mirror and a floating drawer" },
+        { img:"rt3", title:"Cream and blue wardrobe with vanity", desc:"Geometric panel doors, lit display shelves, framed mirror and an upholstered stool" },
+        { img:"rt4", title:"Oak and white wardrobe, oval mirror vanity", desc:"Gold chevron inlay doors, perfume shelves and a tall backlit oval mirror" }
+      ]
+    },
+    {
+      key: "living", name: "LIVING ROOM", accent: "#a9561f",
+      subtitle: "Sofas · Majlis · Armchairs · Wall Panels",
+      desc: "Velvet sectionals, majlis floor seating and carved armchairs, with upholstered wall panels in matching trims.",
+      tags: ["SECTIONALS","MAJLIS","ARMCHAIRS","PANELS"],
+      specs: [
+        { label:"MATERIAL",    value:"Velvet / Leather / Walnut",      swatch:"#a97c42" },
+        { label:"FINISH",      value:"Taupe · Navy and gold · Teal",   swatch:"#d8c8b0" },
+        { label:"DETAILS",     value:"Greek-key trim · Mirror tables", swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",                     swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"lv1", title:"Taupe velvet L-shaped sectional", desc:"Wooden base trim, gold-stripe cushions and a coffee table" },
+        { img:"lv2", title:"Carved elephant armchairs",       desc:"Hand-carved walnut-finish arms with teal-green tufted leather" },
+        { img:"lv3", title:"Navy and gold majlis",            desc:"U-shaped velvet seating, Greek-key trim, ottoman cubes, mirror-top tables" },
+        { img:"lv4", title:"Velvet wall panel samples",       desc:"Navy, cream and gold upholstered panels with Greek-key trim" },
+        { img:"lv5", title:"Silver-taupe majlis on green turf", desc:"U-shaped floor seating with striped jacquard cushions, bolster rolls and octagonal side tables, photographed in the workshop" },
+        { img:"lv6", title:"Lattice-panel majlis in production", desc:"Cream jacquard seating with carved lattice side panels, gold trim and a pedestal side table" },
+        { img:"lv7", title:"Cream lattice majlis, showroom view", desc:"Cream quilted seating with carved lattice trim and a gold-edged arm, beside teal tufted panels" },
+        { img:"lv8", title:"Navy and gold star-pattern majlis", desc:"Navy star-print cushions on a carved cream and gold frame, with matching lattice coffee tables" },
+        { img:"lv9", title:"Carved lattice majlis, JEGOL showroom", desc:"U-shaped cream jacquard seating framed in carved lattice and gold-toned wood, with an octagonal coffee table, under the JEGOL sign" },
+        { img:"lv10", title:"Walnut-shell three-seater sofa", desc:"Deep charcoal velvet cushions in a curved walnut shell frame with slim tapered legs" },
+        { img:"lv11", title:"Walnut lounge chair", desc:"Sculpted walnut frame with cream channel-tufted seat and back cushions" },
+        { img:"lv12", title:"Walnut-shell sofa, showroom wall", desc:"Charcoal velvet three-seater in a curved walnut frame, shown under the wooden brand sign" },
+        { img:"lv13", title:"Walnut wingback armchair", desc:"Sculpted walnut shell with a cream quilted-panel seat and back on tapered legs" },
+        { img:"lv14", title:"Tan leather rolled-arm sofa", desc:"Deep caramel leather with studded rolled arms, two scatter cushions and a reclaimed-wood coffee table" },
+        { img:"lv15", title:"Walnut wingback armchair, portrait view", desc:"The same wingback chair in a warm plaster-wall setting with an olive tree and shelving" }
+      ],
+      ref: [
+        { img:"rl1", title:"Royal-blue 3-seater sofa",  desc:"Channel-tufted back and metal legs" },
+        { img:"rl2", title:"Floating oak TV wall unit", desc:"Slatted panel, drawers and shelf" },
+        { img:"rl3", title:"Cream majlis with blue-inlay base", desc:"L-shaped cream seating on a carved wooden base with blue inlay and a hexagonal coffee table" },
+        { img:"rl4", title:"White lattice majlis", desc:"Cream quilted seating with white carved lattice trim and glass-top square tables" },
+        { img:"rl5", title:"Charcoal jacquard majlis", desc:"Grey diamond-pattern cushions, carved lattice side panels and nesting tables with dark tops" },
+        { img:"rl6", title:"Cream majlis with gold-edge tables", desc:"U-shaped cream seating with round bolsters, laser-cut lattice arms and a gold-trim coffee table" },
+        { img:"rl7", title:"Silver-grey majlis with carved table", desc:"Quilted grey seating with a carved trim band and a matching low coffee table" },
+        { img:"rl8", title:"Navy velvet majlis, carved wood trim", desc:"L-shaped blue patterned seating framed in carved wood, with a glass-top table" },
+        { img:"rl9", title:"Cream majlis with carved wood tables", desc:"Long cream seating on a carved wood frame with tall side tables and a glass-top coffee table" },
+        { img:"rl10", title:"Mint-green leather majlis", desc:"Channel-tufted mint leather seating with floral medallions and white octagonal tables" },
+        { img:"rl11", title:"Powder-blue satin majlis", desc:"U-shaped satin seating with embroidered medallions, white scalloped trim and a laser-cut table" },
+        { img:"rl12", title:"Cream majlis under a gold-lit ceiling", desc:"Long cream seating with carved wood trim and a carved octagonal coffee table" },
+        { img:"rl13", title:"Royal-blue majlis with swirl rug", desc:"Blue velvet seating with quilted white panels, tan bolsters and rounded ottoman tables" },
+        { img:"rl14", title:"Grey sectional with Greek-key trim", desc:"Tufted grey velvet sectional with gold Greek-key trim and mirror-top ottoman tables" },
+        { img:"rl15", title:"Grey and gold majlis, octagonal tables", desc:"Patterned grey seating on a gold-toned carved base with glass-top octagonal tables" },
+        { img:"rl16", title:"Powder-blue majlis, floral medallions", desc:"Grey-blue seating with embroidered floral panels and stepped bolsters" },
+        { img:"rl17", title:"Cream majlis, gold carved coffee table", desc:"Cream seating with gold-toned carved trim and an octagonal coffee table on a geometric rug" },
+        { img:"rl18", title:"Cream majlis, chandelier room", desc:"Corner majlis in cream and gold under a LED-lit ceiling with a carved octagonal table" }
+      ]
+    },
+    {
+      key: "dining", name: "DINING", accent: "#6e3210",
+      subtitle: "Round & Rectangular Tables · Chairs",
+      desc: "Round sunburst-veneer tables and rectangular marble-look, gloss-white and oak dining tables, paired with curved upholstered chairs in cream, grey, beige and brown.",
+      tags: ["ROUND TABLES","RECTANGULAR TABLES","CHAIRS"],
+      specs: [
+        { label:"MATERIAL",    value:"Veneer / Marble-look / Gloss / Upholstery", swatch:"#c0713a" },
+        { label:"FINISH",      value:"Copper sunburst · White · Oak · Cream, grey & brown", swatch:"#e8d9c0" },
+        { label:"DETAILS",     value:"Open-back chairs · Quilted backs · Tapered legs", swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",                        swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"dn1", title:"Round sunburst table, eight chairs", desc:"Radiating warm-wood veneer top with a brushed-metal centre disc, black pedestal base and eight cream open-back chairs with dark wood frames" },
+        { img:"dn2", title:"Marble-look dining table, six chairs", desc:"White marble-look top on solid wood legs with six curved cream fabric chairs" },
+        { img:"dn3", title:"White gloss table, four mixed chairs", desc:"Glossy white top on light-wood legs, with two beige and two brown channel-back chairs on black metal legs" },
+        { img:"dn4", title:"Oak dining table, six quilted chairs", desc:"Warm oak-tone table with rounded edges and six grey diamond-quilted chairs on tapered wood legs" },
+        { img:"dn5", title:"White gloss dining set, window side", desc:"The white-top set from the window side: two brown and two beige chairs around a light-wood-leg table" }
+      ],
+      ref: [
+        { img:"rd1", title:"Sunburst round dining table set", desc:"Round copper-veneer sunburst top with cream upholstered open-back chairs on black legs" },
+        { img:"rd2", title:"Round table, chair detail", desc:"Closer view of the curved open-back chairs with cream seat cushions" },
+        { img:"rd3", title:"Round dining set, corner view", desc:"The same round dining set seen from the corner, with six chairs and a polished marble floor" }
+      ]
+    },
+    {
+      key: "office", name: "OFFICE", accent: "#8a5a2b",
+      subtitle: "Desks · Chairs · Bookcases",
+      desc: "Executive and computer desks with drawers and keyboard trays, plus leather and mesh chairs for working spaces.",
+      tags: ["DESKS","CHAIRS","BOOKCASES"],
+      specs: [
+        { label:"MATERIAL",    value:"Wood grain / Leather / Mesh",        swatch:"#7a5230" },
+        { label:"FINISH",      value:"Beige and dark wood · Reddish-brown", swatch:"#4a3322" },
+        { label:"DETAILS",     value:"Lockable drawers · Keyboard tray",   swatch:"#3b6fa0" },
+        { label:"SIZE / PRICE",value:"On request",                          swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"of1", title:"Executive L-shaped desk", desc:"Beige and dark wood, glass-door bookcase and black mesh ergonomic chair" },
+        { img:"of2", title:"Executive leather chair", desc:"Black stitched leather, curved wooden armrests, wooden five-star base" },
+        { img:"of3", title:"Computer desk",           desc:"Reddish-brown wood grain, lockable drawer, keyboard tray, side drawer unit" }
+      ],
+      ref: [
+        { img:"ro1", title:"Oak and white L-shaped desk",  desc:"Executive desk with wall bookcase" },
+        { img:"ro2", title:"Dark wood executive desk",     desc:"Grey slat front" },
+        { img:"ro3", title:"Walnut and beige office desk", desc:"Drawer and cabinet unit" },
+        { img:"ro4", title:"Oak and white computer desk",  desc:"Three drawers, side cabinet, keyboard tray" }
+      ]
+    },
+    {
+      key: "kids", name: "KIDS' FURNITURE", accent: "#b5702e",
+      subtitle: "Themed Beds · Bunk Beds · Wardrobes",
+      desc: "Themed beds and space-saving bunk beds for children's rooms, with stair drawers, pull-out beds and a colourful wardrobe. Bunk beds and wardrobes are shown as reference designs.",
+      tags: ["BEDS","BUNK BEDS","WARDROBES"],
+      specs: [
+        { label:"MATERIAL",    value:"Painted board / Oak-tone panel",       swatch:"#d19a1f" },
+        { label:"FINISH",      value:"Bright yellow · White and oak · Mint", swatch:"#f0d37a" },
+        { label:"DETAILS",     value:"Racing seats · Stair drawers · Guard rails", swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",                   swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"kd1", title:"Yellow sports-car bed", desc:"Racing-seat headboards and headlights, shown in front of white and grey wardrobes" }
+      ],
+      ref: [
+        { img:"rc1", title:"Mint-green kids' wardrobe", desc:"Arched panel doors with carved flowers, lit shelves and a curved drawer unit" },
+        { img:"rc2", title:"Walnut bunk bed with stair drawers", desc:"Staircase storage, LED-lit lower bed, cream panels and under-bed drawers" },
+        { img:"rc3", title:"White bunk bed with step storage", desc:"Slatted guard rails, staircase drawers and a pull-out lower bed" },
+        { img:"rc4", title:"Oak and white bunk bed", desc:"Drawer steps with round knobs and two large under-bed drawers" },
+        { img:"rc5", title:"Cream bunk bed, oak trim", desc:"Cut-out guard rails, oak panels and a staircase with storage doors" },
+        { img:"rc6", title:"White bunk bed with rail stairs", desc:"Drawer staircase with side rail and a pull-out bed beneath" }
+      ]
+    },
+    {
+      key: "storage", name: "WARDROBES & STORAGE", accent: "#5e2d12",
+      subtitle: "Wardrobes · Cabinets · Display Units",
+      desc: "Wardrobes in gloss white, grey, blue and walnut with mirror doors, glass hanging bays, lit shelves and drawers, plus display cabinets and open-shelf storage. Shown as reference designs.",
+      tags: ["WARDROBES","CABINETS","DISPLAY"],
+      specs: [
+        { label:"MATERIAL",    value:"Wood · Glass · Mirror",             swatch:"#7a6a58" },
+        { label:"FINISH",      value:"Black · Walnut · White gloss · Grey · Blue", swatch:"#4a4036" },
+        { label:"DETAILS",     value:"Gold, black or silver handles · LED shelving · Glass bays", swatch:"#b89545" },
+        { label:"SIZE / PRICE",value:"On request",                        swatch:"#c9c4b8" }
+      ],
+      own: [],
+      ref: [
+        { img:"rs1", title:"Black 3-door wardrobe",         desc:"Mirror door, two drawers and silver handles" },
+        { img:"rs2", title:"Curved walnut display cabinet", desc:"Glass doors" },
+        { img:"rs3", title:"Oak-tone storage cabinet",      desc:"Open shelves, charcoal doors, gold handles" },
+        { img:"rs4", title:"Grey 4-door wardrobe with display shelf", desc:"Dark frame, spot-lit open shelves and a four-drawer column" },
+        { img:"rs5", title:"White wardrobe with gold handles", desc:"Tall panel doors, open side shelves and pull-out drawers" },
+        { img:"rs6", title:"White wardrobe with glass hanging bay", desc:"Glass-door hanging section, drawers and a walnut side shelf unit" },
+        { img:"rs7", title:"White wardrobe with lit wood display column", desc:"Backlit wooden shelf column between tall doors, with a three-drawer base" },
+        { img:"rs8", title:"White wardrobe with backlit glass bay", desc:"Black handles, glowing glass hanging section and two lower drawers" },
+        { img:"rs9", title:"Blue and white high-gloss wardrobe", desc:"Gold handles, curved top with spotlights and a lit corner shelf unit" },
+        { img:"rs10", title:"White wardrobe with mirror and slat panel", desc:"Mirrored centre door, grey slat panel and four drawers" },
+        { img:"rs11", title:"White wardrobe, black-frame glass section", desc:"Lit glass walk-in style section with black handles and side drawers" },
+        { img:"rs12", title:"Grey six-door wardrobe, gold edging", desc:"Matt grey doors outlined in thin gold lines with two centre drawers" },
+        { img:"rs13", title:"White sliding-door wardrobe", desc:"Gold line detailing, bronze glass band, corner shelves and a three-drawer unit" },
+        { img:"rs14", title:"Glossy white and grey wardrobe", desc:"Long black handles, grey surround and a LED-lit curved corner shelf" },
+        { img:"rs15", title:"Beige wardrobe with glass door", desc:"Lit hanging bay, yellow drawers and a walnut side shelf" },
+        { img:"rs16", title:"White wardrobe with open glass bay", desc:"Gold handles, glass hanging section, shelves and a four-drawer unit" },
+        { img:"rs17", title:"Charcoal wardrobe with corner shelves", desc:"Floor-to-ceiling doors with gold handles, open shelves and drawers" },
+        { img:"rs18", title:"Blue bedroom with wardrobe and vanity", desc:"Blue and white gloss wardrobe with lit corner shelves, vanity table and upholstered bed" }
+      ]
+    },
+    {
+      key: "kitchen", name: "KITCHEN", accent: "#9c6a3a",
+      subtitle: "Cabinets · Countertops · Layouts",
+      desc: "Fitted kitchens in gloss, matt and wood finishes, in L-shaped, U-shaped and peninsula layouts, made to the size of your room.",
+      tags: ["CABINETS","COUNTERTOPS"],
+      specs: [
+        { label:"MATERIAL",    value:"Gloss / Matt / Light wood", swatch:"#6b8e7a" },
+        { label:"FINISH",      value:"White · Grey · Mauve · Blue · Light wood", swatch:"#d8d2c2" },
+        { label:"DETAILS",     value:"L-shaped · U-shaped · Peninsula · LED lighting", swatch:"#7d6a1c" },
+        { label:"SIZE / PRICE",value:"On request",             swatch:"#c9c4b8" }
+      ],
+      own: [
+        { img:"ok1", title:"Marble-pattern kitchen, LED ceiling", desc:"L-shaped grey marble-pattern cabinets, drawers, a lit glass display unit and a blue LED cove" },
+        { img:"ok2", title:"White marble-look kitchen", desc:"L-shaped cabinets with open shelves, a granite top and a wood door beside them" }
+      ],
+      ref: [
+        { img:"rk1", title:"L-shaped kitchen cabinets", desc:"Light wood with black countertop" },
+        { img:"rk2", title:"Dusty-pink L-shaped kitchen", desc:"Matt pink cabinets, white top and a brown stone splashback" },
+        { img:"rk3", title:"Taupe high-gloss U-shaped kitchen", desc:"Glossy cabinets, under-cabinet lighting and glass upper doors" },
+        { img:"rk4", title:"Two-tone kitchen, marble backsplash", desc:"Cream uppers, taupe lowers, herringbone floor and a dining nook" },
+        { img:"rk5", title:"White gloss kitchen with wood niches", desc:"Lit walnut open shelves above a long handleless counter" },
+        { img:"rk6", title:"Mauve and white kitchen", desc:"Gloss mauve uppers, white tall units, a built-in oven and a fridge column" },
+        { img:"rk7", title:"Walnut and beige kitchen", desc:"Slatted walnut uppers, cooker hood and stone backsplash over a marble floor" },
+        { img:"rk8", title:"Peninsula kitchen with slatted bar", desc:"Grey countertop, wooden slat bar front, pendant lights and wood-and-white cabinets" },
+        { img:"rk9", title:"White classic kitchen, copper handles", desc:"Glass-pane doors, raised panels and a warm wood countertop" },
+        { img:"rk10", title:"White and blue kitchen, black top", desc:"White uppers with glass doors, blue lowers and a marble splashback" },
+        { img:"rk11", title:"White raised-panel kitchen", desc:"Classic doors with black handles, black granite top and built-in oven" },
+        { img:"rk12", title:"Grey handleless kitchen", desc:"Two-tone grey cabinets with a white tall fridge and flush upper units" },
+        { img:"rk13", title:"White gloss kitchen, beige uppers", desc:"Slim glossy fronts, glass splashback and a built-in oven" },
+        { img:"rk14", title:"Mauve L-shaped kitchen, lit shelves", desc:"Soft mauve cabinets, spice shelves, tall fridge and a ceiling fan" }
+      ]
+    },
+    {
+      key: "doors", name: "DOORS", accent: "#7a3e1b",
+      subtitle: "Interior · Entrance · Panel & Flush",
+      desc: "Interior and entrance doors in wood grain, white and painted finishes, with moulded panels, metal inlay lines and glass strips. Shown as reference designs.",
+      tags: ["INTERIOR","ENTRANCE","PANEL","FLUSH"],
+      specs: [
+        { label:"MATERIAL",    value:"Solid wood / Veneer / Painted board", swatch:"#8b5e3c" },
+        { label:"FINISH",      value:"Walnut · Wenge · White · Beige",      swatch:"#4a3322" },
+        { label:"DETAILS",     value:"Metal inlays · Glass strips · Lever handles", swatch:"#b89545" },
+        { label:"SIZE / PRICE",value:"On request",                          swatch:"#c9c4b8" }
+      ],
+      own: [],
+      ref: [
+        { img:"rr1", title:"Wenge door with twin glass strips", desc:"Dark brown door with two tall frosted glass panels" },
+        { img:"rr2", title:"White two-panel door", desc:"Moulded panels and a satin lever handle" },
+        { img:"rr3", title:"Solid walnut entrance door", desc:"Raised panels, central letterbox slot and a black lever handle" },
+        { img:"rr4", title:"Dark oak two-panel door", desc:"Moulded panels with a brass handle and lock" },
+        { img:"rr5", title:"Brown door with relief line pattern", desc:"Routed geometric lines and a silver lever handle" },
+        { img:"rr6", title:"Wenge door with metal inlay lines", desc:"Two vertical metal strips on a dark wood-grain leaf" },
+        { img:"rr7", title:"Beige two-panel door", desc:"Painted mocha finish with moulded panels and a brass handle" },
+        { img:"rr8", title:"Dark walnut inset-panel door", desc:"Three-section leaf with a flush lever handle" },
+        { img:"rr9", title:"Mahogany door, horizontal inlays", desc:"Red-brown wood grain with thin steel horizontal lines" },
+        { img:"rr10", title:"Walnut door with twin vertical lines", desc:"Slim metal inlays on a warm wood-grain leaf" },
+        { img:"rr11", title:"Brown door with horizontal grooves", desc:"Five-section wood-grain leaf with a silver lever handle" },
+        { img:"rr12", title:"Cream door with vertical grooves", desc:"Painted cream leaf with routed vertical lines" },
+        { img:"rr13", title:"Flush white door, black handle", desc:"Plain white leaf with a slim black lever" },
+        { img:"rr14", title:"Mahogany grooved slab door", desc:"Solid wood slab with vertical and horizontal grooves" },
+        { img:"rr15", title:"White flush door in frame", desc:"Smooth white leaf with a black lever, shown on a display stand" },
+        { img:"rr16", title:"White two-panel door, flat profile", desc:"Flat-profile panels with a satin lever handle" },
+        { img:"rr17", title:"Sage-grey two-panel door", desc:"Painted sage-grey leaf with moulded panels" }
+      ]
+    }
+  ],
+
+  /* ══════════════ MISC ══════════════ */
+  persistEdits: true,
+  /* false = public mode: hides "Add a photo" / "Replace" / "Change hero photo" controls and empty slots */
+  editable: true
+};
+</script>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<!-- ---------- HERO ---------- -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <button class="hero-click" id="heroOpen" type="button" aria-label="Open hero image in the image frame"></button>
+  <div class="hero-inner" id="heroInner"></div>
+  <button class="hero-edit" id="editHero" type="button"></button>
+</section>
+
+<!-- ---------- TRUST ---------- -->
+<div class="trust"><div class="trust-inner" id="trustInner"></div></div>
+
+<!-- ---------- CATALOG ---------- -->
+<section class="catalog" id="catalog">
+  <div class="catalog-inner">
+    <div class="section-head" id="catalogHead"></div>
+
+    <div class="category-grid" id="categories" aria-label="Browse by room"></div>
+
+    <div class="catalog-tools">
+      <label class="search-field">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" aria-label="Search catalog" autocomplete="off">
+        <button class="clear-btn" id="clearSearch" type="button" aria-label="Clear search" style="display:none">×</button>
+      </label>
+      <label><span class="visually-hidden">Filter by category</span>
+        <select id="categoryFilter" aria-label="Filter catalog by category"></select>
+      </label>
+      <span class="catalog-count" id="catalogCount" role="status" aria-live="polite"></span>
+      <button class="tool-btn" type="button" id="downloadPdf"></button>
+    </div>
+
+    <div id="cats"></div>
+    <div id="noResults" class="empty-state no-results"></div>
+  </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section class="contact" id="contact">
+  <div class="contact-band" id="contactBand"></div>
+</section>
+
+<!-- ---------- FOOTER ---------- -->
+<footer class="footer" id="footerInner"></footer>
+
+<!-- ---------- FLOATING UI ---------- -->
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="pick" accept="image/*" hidden>
+
+<!-- ---------- IMAGE FRAME ---------- -->
+<div class="image-frame" id="imageFrame" role="dialog" aria-modal="true" aria-labelledby="frameTitle" hidden>
+  <button class="image-frame-backdrop" type="button" tabindex="-1" aria-label="Close image frame" data-frame-close></button>
+
+  <div class="image-frame-panel">
+    <div class="image-frame-bar">
+      <span class="image-frame-counter" id="frameCounter" aria-live="polite"></span>
+      <div class="image-frame-tools">
+        <button id="frameZoom" type="button" aria-label="Zoom to actual size" title="Zoom">⤢</button>
+        <a id="frameDownload" href="#" download aria-label="Download this image" title="Download">↓</a>
+        <button id="frameClose" type="button" aria-label="Close image frame" title="Close">×</button>
+      </div>
+    </div>
+
+    <div class="image-frame-stage" id="frameStage">
+      <img id="frameImg" alt="" draggable="false">
+    </div>
+
+    <button class="image-frame-nav prev" id="framePrev" type="button" aria-label="Previous image">‹</button>
+    <button class="image-frame-nav next" id="frameNext" type="button" aria-label="Next image">›</button>
+
+    <div class="image-frame-caption">
+      <strong id="frameTitle"></strong>
+      <span id="frameDesc"></span>
+      <span class="image-frame-hint" id="frameHint"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   RUNTIME — everything below is template logic
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+"use strict";
+
+const CFG  = JEGOL_CONFIG;
+if (CFG.editable === false) document.documentElement.classList.add('no-edit');
+const $    = s => document.querySelector(s);
+const $$   = s => Array.prototype.slice.call(document.querySelectorAll(s));
+const safe = s => String(s == null ? "" : s)
+  .replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const IMG  = CFG.images || {};
+const D    = CFG.categories || [];
+const COLS = Math.max(1, parseInt((CFG.theme && CFG.theme.gridColumns) || 4, 10) || 4);
+const C    = CFG.catalog || {};
+const V    = CFG.viewer  || {};
+
+/* ─────────────────────────────────────────────
+   1. THEME
+───────────────────────────────────────────── */
+(function applyTheme(){
+  const t = CFG.theme || {};
+  const r = document.documentElement.style;
+  const map = {
+    '--bg':'bg', '--surface':'surface', '--surface-hover':'surfaceHover',
+    '--text':'text', '--text-dim':'textDim', '--border':'border',
+    '--accent':'accent', '--accent-soft':'accentSoft',
+    '--font-body':'fontBody', '--font-mono':'fontMono', '--font-display':'fontDisplay',
+    '--logo-size':'logoSize', '--content-max':'contentMax'
+  };
+  Object.keys(map).forEach(k => { const v = t[map[k]]; if (v) r.setProperty(k, v); });
+
+  if (t.bg) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t.bg);
+  }
+})();
+
+/* ─────────────────────────────────────────────
+   2. HEAD
+───────────────────────────────────────────── */
+(function applyHead(){
+  const b = CFG.brand || {};
+  if (b.title) document.title = b.title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta && b.description) meta.setAttribute('content', b.description);
+})();
+
+/* ─────────────────────────────────────────────
+   3. HERO
+───────────────────────────────────────────── */
+(function renderHero(){
+  const h = CFG.hero || {};
+  const b = CFG.brand || {};
+  const menu = CFG.menu || [];
+
+  /* background image */
+  const bg = $('#heroBg');
+  const heroSrc = IMG.hero || h.image || '';
+  if (heroSrc) {
+    bg.style.backgroundImage = 'url("' + heroSrc + '")';
+    bg.classList.add('has-image');
+  }
+
+  /* hero edit button label */
+  $('#editHero').textContent = h.editLabel || 'Change hero photo ＋';
+
+  /* inner markup */
+  $('#heroInner').innerHTML =
+    '<div class="hero-top">' +
+      '<a class="brand" href="#home" aria-label="' + safe(b.name || '') + ' home">' +
+        '<span class="logo-circle" id="logoCircle">' +
+          '<img id="logoImg" alt="' + safe(b.name || '') + ' logo" style="display:none">' +
+          '<span class="mark" id="logoMark">' + safe(b.monogram || (b.name || '·').charAt(0)) + '</span>' +
+        '</span>' +
+        '<span class="word-mark">' + safe(b.name || '') + '<small>' + safe(b.subname || '') + '</small></span>' +
+      '</a>' +
+      '<nav class="menu" aria-label="Main">' +
+        menu.map(m => {
+          const cls = [m.cta ? 'cta' : '', m.hideOnMobile ? 'hide-sm' : ''].filter(Boolean).join(' ');
+          return '<a href="' + safe(m.href || '#') + '"' + (cls ? ' class="' + cls + '"' : '') + '>' + safe(m.label || '') + '</a>';
+        }).join('') +
+      '</nav>' +
+    '</div>' +
+    '<div class="hero-text">' +
+      '<span class="eyebrow">' + safe(h.eyebrow || '') + '</span>' +
+      '<h1 class="hero-title">' + (h.title || '') + '</h1>' +
+      '<p class="hero-sub">' + safe(h.subtitle || '') + '</p>' +
+      '<div class="hero-cta">' +
+        (h.ctas || []).map(c => {
+          const v = c.variant === 'primary' ? 'btn-primary' : 'btn-ghost';
+          const icon = c.icon ? '<span aria-hidden="true">' + safe(c.icon) + '</span>' : '';
+          return '<a href="' + safe(c.href || '#') + '" class="btn ' + v + '">' + safe(c.label || '') + icon + '</a>';
+        }).join('') +
+      '</div>' +
+    '</div>' +
+    '<div></div>';
+})();
+
+/* ─────────────────────────────────────────────
+   4. TRUST STRIP
+───────────────────────────────────────────── */
+$('#trustInner').innerHTML = (CFG.trust || []).map(t =>
+  '<div class="trust-item">' +
+    '<div class="trust-icon" aria-hidden="true">' + safe(t.icon || '·') + '</div>' +
+    '<div><strong>' + safe(t.title || '') + '</strong><span>' + safe(t.text || '') + '</span></div>' +
+  '</div>'
+).join('');
+
+/* ─────────────────────────────────────────────
+   5. CATALOG HEAD + TOOLS
+───────────────────────────────────────────── */
+(function renderCatalogShell(){
+  $('#catalogHead').innerHTML =
+    '<div>' +
+      '<div class="eyebrow">' + safe(C.eyebrow || '') + '</div>' +
+      '<h2 class="section-title">' + (C.title || '') + '</h2>' +
+    '</div>' +
+    '<p class="section-lead">' + safe(C.lead || '') + '</p>';
+
+  $('#search').placeholder = C.searchPlaceholder || '';
+
+  $('#categoryFilter').innerHTML =
+    '<option value="">' + safe(C.allCategoriesLabel || 'All categories') + '</option>' +
+    D.map(c => '<option value="' + safe(c.key) + '">' + safe(c.name) + '</option>').join('');
+
+  $('#downloadPdf').textContent = C.printLabel || 'Print catalog ↗';
+
+  $('#noResults').innerHTML =
+    '<b>' + safe((C.noResults && C.noResults.title) || '') + '</b>' +
+    safe((C.noResults && C.noResults.text) || '');
+})();
+
+/* ─────────────────────────────────────────────
+   6. CATEGORY PREVIEW GRID
+───────────────────────────────────────────── */
+(function renderCategoryGrid(){
+  const cards = D.map((cat, i) =>
+    '<a class="category-card" href="#p-' + safe(cat.key) + '" data-jump="' + safe(cat.key) + '" ' +
+       'style="--card-accent:' + safe(cat.accent || CFG.theme.accent) + '">' +
+      '<span class="card-num">' + String(i + 1).padStart(2, '0') + '</span>' +
+      '<span class="card-name">' + safe(cat.name) + '</span>' +
+      '<span class="card-desc">' + safe(cat.subtitle || cat.desc || '') + '</span>' +
+      '<span class="card-arrow">View →</span>' +
+    '</a>'
+  ).join('');
+
+  const all = C.allCard;
+  const allCard = all
+    ? '<a class="category-card" href="#catalog" data-jump="" style="--card-accent:' + safe(CFG.theme.accent) + '">' +
+        '<span class="card-num">→</span>' +
+        '<span class="card-name">' + safe(all.name || '') + '</span>' +
+        '<span class="card-desc">' + safe(all.desc || '') + '</span>' +
+        '<span class="card-arrow">' + safe(all.arrow || 'Explore →') + '</span>' +
+      '</a>'
+    : '';
+
+  $('#categories').innerHTML = cards + allCard;
+})();
+
+/* ─────────────────────────────────────────────
+   7. CARD TEMPLATES
+───────────────────────────────────────────── */
+function cardKey(cat, item, isRef){
+  return cat.key + ':' + (isRef ? 'ref' : 'own') + ':' + (item.img || 'x');
+}
+
+function card(cat, item, isRef){
+  const src   = IMG[item.img] || '';
+  const title = item.title || '';
+  const desc  = item.desc  || '';
+  const key   = cardKey(cat, item, isRef);
+  const search = [cat.name, title, desc, (cat.tags || []).join(' '),
+                  (cat.specs || []).map(s => s.value).join(' ')]
+                 .join(' ').toLowerCase();
+
+  return '<article class="product-card" data-category="' + safe(cat.key) + '"' +
+            ' data-key="' + safe(key) + '" data-name="' + safe(title) + '"' +
+            ' data-search="' + safe(search) + '">' +
+    '<div class="product-photo">' +
+      '<button class="photo-open" type="button" aria-label="Open image in frame: ' + safe(title) + '">' +
+        '<img src="' + safe(src) + '" alt="' + safe(title) + '" loading="lazy" decoding="async" draggable="false">' +
+      '</button>' +
+      '<button class="photo-edit" type="button" aria-label="Replace photo: ' + safe(title) + '">' +
+        safe(C.replacePhotoCta || 'Replace ＋') +
+      '</button>' +
+    '</div>' +
+    '<div class="product-caption">' +
+      '<b>' + safe(title) + '</b>' +
+      '<p>' + safe(desc) + '</p>' +
+      (isRef ? '<span class="ref-badge">' + safe(C.refBadge || 'Reference design') + '</span>' : '') +
+    '</div>' +
+  '</article>';
+}
+
+function emptyCard(cat, i){
+  return '<article class="product-card is-empty" data-category="' + safe(cat.key) + '"' +
+            ' data-key="' + safe(cat.key + ':own:empty:' + i) + '" data-name="' + safe(cat.name) + '">' +
+    '<div class="product-photo empty">' +
+      '<button class="empty-add" type="button" aria-label="Add a showroom photo for ' + safe(cat.name) + '">' +
+        '<span class="empty-inner">' +
+          '<b>' + safe(cat.name) + '</b>' +
+          '<span>' + safe(C.emptyPhotoTitle || 'Photo placeholder') + '</span>' +
+          '<em>' + safe(C.emptyPhotoCta || '＋ Add a photo') + '</em>' +
+        '</span>' +
+      '</button>' +
+    '</div>' +
+  '</article>';
+}
+
+/* Build one gallery group.
+   isRef=false → pad the final row out to a full COLS-wide row.
+   isRef=true  → never pad (you can't add to a reference design). */
+function group(cat, label, items, isRef){
+  const padTo = isRef ? 0 : COLS;
+  if (!items.length && !padTo) return '';
+
+  let body = items.map(it => card(cat, it, isRef)).join('');
+
+  let fill = 0;
+  if (padTo) fill = items.length ? (padTo - (items.length % padTo)) % padTo : padTo;
+  for (let i = 0; i < fill; i++) body += emptyCard(cat, i);
+
+  const unit = isRef ? (C.refUnit || 'reference designs') : (C.ownUnit || 'showroom photos');
+
+  return '<div class="gallery-group">' +
+    '<div class="group-title">' + safe(label) + '<small>' + items.length + ' ' + safe(unit) + '</small></div>' +
+    '<div class="product-grid">' + body + '</div>' +
+  '</div>';
+}
+
+/* ─────────────────────────────────────────────
+   8. RENDER ALL PRODUCT SECTIONS
+───────────────────────────────────────────── */
+$('#cats').innerHTML = D.map((cat, i) =>
+  '<section class="product" id="p-' + safe(cat.key) + '" data-category="' + safe(cat.key) + '"' +
+     ' style="--category-accent:' + safe(cat.accent || '') + '">' +
+    '<div class="product-head">' +
+      '<div>' +
+        '<div class="product-title-row">' +
+          '<span class="product-number" aria-hidden="true">' + String(i + 1).padStart(2, '0') + '</span>' +
+          '<span class="eyebrow">Furniture collection</span>' +
+        '</div>' +
+        '<h3>' + safe(cat.name) + '</h3>' +
+        '<div class="product-subtitle">' + safe(cat.subtitle || '') + '</div>' +
+        '<p class="product-desc">' + safe(cat.desc || '') + '</p>' +
+        '<div class="tag-list">' + (cat.tags || []).map(t => '<span>' + safe(t) + '</span>').join('') + '</div>' +
+      '</div>' +
+      '<div class="specs">' +
+        (cat.specs || []).map(s =>
+          '<div class="spec">' +
+            '<div class="spec-label">' +
+              '<i class="swatch" style="background:' + safe(s.swatch || 'transparent') + '" aria-hidden="true"></i>' +
+              safe(s.label) +
+            '</div>' +
+            '<div class="spec-value">' + safe(s.value) + '</div>' +
+          '</div>'
+        ).join('') +
+      '</div>' +
+    '</div>' +
+    group(cat, C.groupOwnLabel || 'In the showroom', cat.own || [], false) +
+    group(cat, C.groupRefLabel || 'Reference designs', cat.ref || [], true) +
+  '</section>'
+).join('');
+
+/* ─────────────────────────────────────────────
+   9. CONTACT + FOOTER
+───────────────────────────────────────────── */
+const SOCIAL_SVG = {
+  instagram:'<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>',
+  facebook:'<path fill="currentColor" d="M13.6 21v-7.8h2.6l.4-3.1h-3V8.2c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H7.9v3.1h2.7V21z"/>',
+  tiktok:'<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.2 3.5v11.2a3.7 3.7 0 1 1-3.7-3.7M14.2 3.5c.3 2.5 1.9 4.2 4.6 4.4"/>',
+  telegram:'<path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M21 4.2 3.2 11.1l5.3 2 1.7 5.6 3.1-3.3 4.5 3.3zM8.5 13.1 21 4.2"/>',
+  youtube:'<rect x="2.5" y="5" width="19" height="14" rx="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="currentColor" d="M10.2 9.2v5.6l4.8-2.8z"/>',
+  threads:'<path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M17.6 8.6C16.9 6 14.9 4.5 12 4.5 8 4.5 5.5 7.4 5.5 12s2.5 7.5 6.5 7.5c3.2 0 5.4-1.7 5.4-4 0-2.1-1.7-3.3-4-3.3-1.9 0-3.1 1-3.1 2.3 0 1.2 1 2 2.3 2 1.9 0 3.2-1.6 3.2-4.4 0-1.4-.3-2.4-.9-3.1"/>'
+};
+function socialsHTML(extraClass){
+  const list = CFG.socials || [];
+  if (!list.length) return '';
+  return '<div class="socials ' + (extraClass || '') + '">' + list.map(x =>
+    '<a href="' + safe(x.href || '#') + '" target="_blank" rel="noopener noreferrer" aria-label="' + safe(x.label || x.key) + '" title="' + safe(x.label || x.key) + '">' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (SOCIAL_SVG[x.key] || '') + '</svg>' +
+    '</a>'
+  ).join('') + '</div>';
+}
+
+(function renderContact(){
+  const c = CFG.contact || {};
+  $('#contactBand').innerHTML =
+    '<div>' +
+      '<div class="eyebrow">' + safe(c.eyebrow || '') + '</div>' +
+      '<h2>' + (c.title || '') + '</h2>' +
+      '<p>' + safe(c.desc || '') + '</p>' +
+      '<div class="contact-actions">' +
+        (c.actions || []).map(a => {
+          const v = a.variant === 'primary' ? 'primary' : '';
+          return '<a class="btn ' + v + '" href="' + safe(a.href || '#') + '">' + safe(a.label || '') + '</a>';
+        }).join('') +
+      '</div>' +
+    '</div>' +
+    '<div class="contact-list">' +
+      (c.details || []).map(d =>
+        '<div class="contact-row">' +
+          '<span>' + safe(d.label || '') + '</span>' +
+          '<strong>' + (d.html || safe(d.value || '')) + '</strong>' +
+        '</div>'
+      ).join('') +
+      ((CFG.socials || []).length
+        ? '<div class="contact-row"><span>Socials</span><strong>' + socialsHTML() + '</strong></div>'
+        : '') +
+    '</div>';
+})();
+
+(function renderFooter(){
+  const f = CFG.footer || {};
+  const b = CFG.brand || {};
+  $('#footerInner').innerHTML =
+    '<div class="footer-left">' +
+      '<span class="footer-mark" id="footMark">' +
+        '<img id="footLogo" alt="" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:50%">' +
+        '<span id="footMarkText">' + safe(b.monogram || (b.name || '·').charAt(0)) + '</span>' +
+      '</span>' +
+      '<div>' +
+        '<span>' + safe(b.name || '') + ' ' + safe((b.subname || '').trim()) + '</span>' +
+        '<span class="footer-note">' + safe(f.note || '') + '</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="footer-links">' +
+      (f.links || []).map(l => '<a href="' + safe(l.href || '#') + '">' + safe(l.label || '') + '</a>').join('') +
+    '</div>' +
+    socialsHTML('footer-socials') +
+    '<div class="footer-bottom">' +
+      '<span>' + safe(f.copyright || '') + '</span>' +
+      (CFG.credit
+        ? '<a class="powered" href="' + safe(CFG.credit.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + safe(CFG.credit.label + ' ' + CFG.credit.name) + ' — view portfolio" title="View portfolio">' +
+            '<span>' + safe(CFG.credit.label) + ' <b>' + safe(CFG.credit.name) + '</b></span>' +
+            '<img src="' + safe(CFG.credit.logo) + '" alt="' + safe(CFG.credit.name) + ' logo" width="30" height="30" loading="lazy">' +
+          '</a>'
+        : '') +
+    '</div>';
+})();
+
+/* ─────────────────────────────────────────────
+   10. LOGO (with graceful monogram fallback)
+───────────────────────────────────────────── */
+function setLogo(src){
+  const circle = $('#logoCircle');
+  const img    = $('#logoImg');
+  const mark   = $('#logoMark');
+  const foot   = $('#footMark');
+  const fImg   = $('#footLogo');
+  const fTxt   = $('#footMarkText');
+
+  if (!src) {
+    if (circle) circle.classList.remove('has-image');
+    if (img)  img.style.display = 'none';
+    if (mark) mark.style.display = '';
+    if (foot) foot.classList.remove('has-image');
+    if (fImg) fImg.style.display = 'none';
+    if (fTxt) fTxt.style.display = '';
+    return;
+  }
+
+  const probe = new Image();
+  probe.onload = () => {
+    if (circle) { circle.classList.add('has-image'); circle.style.backgroundImage = 'url("' + src + '")'; }
+    if (img)  img.style.display = 'none';
+    if (mark) mark.style.display = 'none';
+    if (foot) { foot.classList.add('has-image'); foot.style.backgroundImage = 'url("' + src + '")'; }
+    if (fImg) fImg.style.display = 'none';
+    if (fTxt) fTxt.style.display = 'none';
+  };
+  probe.onerror = () => {
+    if (circle) circle.classList.remove('has-image');
+    if (img)  img.style.display = 'none';
+    if (mark) mark.style.display = '';
+    if (foot) foot.classList.remove('has-image');
+    if (fImg) fImg.style.display = 'none';
+    if (fTxt) fTxt.style.display = '';
+  };
+  probe.src = src;
+}
+setLogo(IMG.logo || (CFG.brand && CFG.brand.logo) || '');
+
+/* ─────────────────────────────────────────────
+   11. IMAGE FRAME VIEWER
+───────────────────────────────────────────── */
+const frameEl       = $('#imageFrame');
+const frameImg      = $('#frameImg');
+const frameStage    = $('#frameStage');
+const frameTitle    = $('#frameTitle');
+const frameDesc     = $('#frameDesc');
+const frameCounter  = $('#frameCounter');
+const framePrev     = $('#framePrev');
+const frameNext     = $('#frameNext');
+const frameClose    = $('#frameClose');
+const frameZoomBtn  = $('#frameZoom');
+const frameDownload = $('#frameDownload');
+
+$('#frameHint').textContent = V.hint || '';
+
+let frameItems  = [];
+let frameIndex  = 0;
+let frameOpener = null;
+let frameZoomed = false;
+
+function extOf(src){
+  if (!src) return 'jpg';
+  if (src.indexOf('data:') === 0) {
+    const m = /^data:image\/([a-z0-9.+-]+)/i.exec(src);
+    if (!m) return 'png';
+    const e = m[1].toLowerCase();
+    return e === 'jpeg' ? 'jpg' : (e === 'svg+xml' ? 'svg' : e);
+  }
+  const clean = String(src).split('?')[0].split('#')[0];
+  const m = /\.([a-z0-9]+)$/i.exec(clean);
+  return m ? m[1].toLowerCase() : 'jpg';
+}
+
+function visibleCards(){
+  return $$('.product-card').filter(card => {
+    if (card.classList.contains('is-empty')) return false;
+    if (card.style.display === 'none') return false;
+    const sec = card.closest('.product');
+    if (sec && sec.style.display === 'none') return false;
+    const img = card.querySelector('.photo-open img');
+    return !!img && !!img.getAttribute('src') && !img.classList.contains('is-broken');
+  });
+}
+
+function cardToItem(card){
+  const img     = card.querySelector('.photo-open img');
+  const titleEl = card.querySelector('.product-caption b');
+  const descEl  = card.querySelector('.product-caption p');
+  return {
+    src:   img.currentSrc || img.src,
+    alt:   img.alt || '',
+    title: (titleEl && titleEl.textContent) || img.alt || 'JEGOL Furniture',
+    desc:  (descEl && descEl.textContent) || ''
+  };
+}
+
+function openCardFrame(card){
+  const cards = visibleCards();
+  if (!cards.length) return;
+  let idx = cards.indexOf(card);
+  if (idx < 0) idx = 0;
+  openImageFrame({
+    items:  cards.map(cardToItem),
+    index:  idx,
+    opener: card.querySelector('.photo-open')
+  });
+}
+
+function openImageFrame(opts){
+  const items = ((opts && opts.items) || []).filter(it => it && it.src);
+  if (!items.length) return;
+
+  frameItems  = items;
+  frameIndex  = Math.max(0, Math.min((opts.index || 0), items.length - 1));
+  frameOpener = opts.opener || document.activeElement;
+
+  renderFrame();
+
+  frameEl.hidden = false;
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', frameKeydown);
+  frameClose.focus();
+}
+window.openImageFrame = openImageFrame;
+
+function renderFrame(){
+  const item = frameItems[frameIndex];
+  if (!item) return closeFrame();
+
+  setZoom(false);
+
+  frameImg.src = item.src;
+  frameImg.alt = item.alt || item.title || '';
+  frameTitle.textContent = item.title || item.alt || '';
+  frameDesc.textContent  = item.desc || '';
+  frameDesc.style.display = item.desc ? '' : 'none';
+
+  frameCounter.textContent = (frameIndex + 1) + ' / ' + frameItems.length +
+    (frameItems.length > 1 ? ' · ' + (V.counterZoomHint || '') : '');
+
+  const many = frameItems.length > 1;
+  framePrev.hidden = !many;
+  frameNext.hidden = !many;
+
+  frameDownload.href = item.src;
+  frameDownload.setAttribute(
+    'download',
+    (item.title || 'jegol-furniture').replace(/[^\w\-]+/g, '-').toLowerCase() + '.' + extOf(item.src)
+  );
+}
+
+function stepFrame(dir){
+  if (frameItems.length < 2) return;
+  frameIndex = (frameIndex + dir + frameItems.length) % frameItems.length;
+  renderFrame();
+}
+
+function setZoom(on){
+  frameZoomed = !!on;
+  frameImg.classList.toggle('zoomed', frameZoomed);
+  frameStage.style.touchAction = frameZoomed ? 'auto' : 'pan-y';
+  frameZoomBtn.setAttribute('aria-label', frameZoomed ? (V.zoomOutLabel || 'Fit image') : (V.zoomInLabel || 'Zoom'));
+  frameZoomBtn.textContent = frameZoomed ? '⤡' : '⤢';
+}
+
+function toggleZoom(){
+  if (!frameImg.naturalWidth) return;
+  setZoom(!frameZoomed);
+  if (!frameZoomed) frameStage.scrollTo(0, 0);
+}
+
+function closeFrame(){
+  if (frameEl.hidden) return;
+  frameEl.hidden = true;
+  frameImg.removeAttribute('src');
+  frameImg.classList.remove('zoomed');
+  frameZoomed = false;
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', frameKeydown);
+  if (frameOpener && document.contains(frameOpener)) frameOpener.focus();
+  frameOpener = null;
+}
+
+function frameKeydown(e){
+  if (e.key === 'Escape')     { e.preventDefault(); closeFrame(); return; }
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); stepFrame(-1); return; }
+  if (e.key === 'ArrowRight') { e.preventDefault(); stepFrame(1);  return; }
+  if (e.key === '0')          { e.preventDefault(); setZoom(false); return; }
+  if (e.key !== 'Tab') return;
+
+  const focusables = $$('#imageFrame button, #imageFrame a')
+    .filter(b => !b.hidden && !b.disabled && b.offsetParent !== null);
+  if (!focusables.length) return;
+  const first = focusables[0], last = focusables[focusables.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+}
+
+frameClose.addEventListener('click', closeFrame);
+frameEl.querySelector('[data-frame-close]').addEventListener('click', closeFrame);
+framePrev.addEventListener('click', () => stepFrame(-1));
+frameNext.addEventListener('click', () => stepFrame(1));
+frameZoomBtn.addEventListener('click', toggleZoom);
+frameImg.addEventListener('dblclick', e => { e.preventDefault(); toggleZoom(); });
+
+/* Touch: swipe to navigate, double-tap to zoom */
+let swipeId = null, swipeX = 0, swipeY = 0, lastTap = 0;
+
+frameStage.addEventListener('pointerdown', e => {
+  if (e.target.closest('button, a')) return;
+  if (e.pointerType === 'mouse') return;
+  if (frameZoomed) return;
+  swipeId = e.pointerId;
+  swipeX  = e.clientX;
+  swipeY  = e.clientY;
+});
+
+frameStage.addEventListener('pointerup', e => {
+  if (e.pointerId !== swipeId) return;
+  swipeId = null;
+
+  const dx = e.clientX - swipeX;
+  const dy = e.clientY - swipeY;
+  const tapped = Math.abs(dx) < 14 && Math.abs(dy) < 14;
+
+  if (!tapped && Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.6) {
+    stepFrame(dx < 0 ? 1 : -1);
+    lastTap = 0;
+    return;
+  }
+
+  if (tapped) {
+    const now = Date.now();
+    if (now - lastTap < 300) { toggleZoom(); lastTap = 0; }
+    else lastTap = now;
+  }
+});
+
+frameStage.addEventListener('pointercancel', () => { swipeId = null; });
+
+/* ─────────────────────────────────────────────
+   12. PERSISTENCE (localStorage)
+───────────────────────────────────────────── */
+const STORE_KEY = 'jegol-furniture-edits-v2';
+let saved = {};
+if (CFG.persistEdits) {
+  try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}') || {}; }
+  catch (e) { saved = {}; }
+}
+function persist(){
+  if (!CFG.persistEdits) return;
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); }
+  catch (e) { showToast('Saved for this session only — browser storage is full.'); }
+}
+
+/* ─────────────────────────────────────────────
+   13. PHOTO REPLACEMENT
+───────────────────────────────────────────── */
+let current = null;
+const pick = $('#pick');
+
+function chooseImage(target){
+  current = target;
+  pick.value = '';
+  pick.click();
+}
+
+pick.addEventListener('change', () => {
+  const f = pick.files && pick.files[0];
+  const target = current;
+  if (!f || !target) return;
+
+  if (!f.type || f.type.indexOf('image/') !== 0) {
+    showToast('Please choose an image file.');
+    pick.value = ''; current = null; return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    const dataUrl = reader.result;
+
+    if (target.kind === 'hero') {
+      const bg = $('#heroBg');
+      bg.style.backgroundImage = 'url("' + dataUrl + '")';
+      bg.classList.add('has-image');
+      saved.hero = dataUrl;
+      persist();
+    } else {
+      const photo = target.el;
+      const card  = photo.closest('.product-card');
+      fillPhoto(photo, dataUrl);
+      if (card && card.dataset.key) { saved['card:' + card.dataset.key] = dataUrl; persist(); }
+      applyFilters();
+    }
+
+    showToast(CFG.persistEdits
+      ? 'Photo updated. Reload to confirm it stuck.'
+      : 'Photo updated for this browser session only — the HTML file on disk is unchanged.');
+
+    pick.value = ''; current = null;
+  };
+
+  reader.onerror = () => {
+    showToast('Sorry, that image could not be read.');
+    pick.value = ''; current = null;
+  };
+
+  reader.readAsDataURL(f);
+});
+
+function fillPhoto(photo, src){
+  const card = photo.closest('.product-card');
+  const name = (card && card.dataset.name) || 'showroom photo';
+
+  photo.classList.remove('empty');
+  $$('.empty-add, .img-fallback').forEach(n => { if (photo.contains(n)) n.remove(); });
+
+  let img = photo.querySelector('img');
+  if (img) {
+    img.classList.remove('is-broken');
+    img.src = src;
+    img.alt = name;
+    img.style.display = '';
+  } else {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'photo-open';
+    btn.setAttribute('aria-label', 'Open image in frame: ' + name);
+    img = document.createElement('img');
+    img.src = src;
+    img.alt = name;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.draggable = false;
+    btn.appendChild(img);
+    photo.insertBefore(btn, photo.firstChild);
+  }
+
+  let edit = photo.querySelector('.photo-edit');
+  if (!edit) {
+    edit = document.createElement('button');
+    edit.type = 'button';
+    edit.className = 'photo-edit';
+    edit.textContent = C.replacePhotoCta || 'Replace ＋';
+    photo.appendChild(edit);
+  }
+  edit.setAttribute('aria-label', 'Replace photo: ' + name);
+
+  if (card) {
+    card.classList.remove('is-empty');
+    card.dataset.search = ((card.dataset.search || '') + ' added photo').trim();
+  }
+}
+
+/* Apply saved overrides */
+(function applySavedEdits(){
+  if (!CFG.persistEdits) return;
+
+  if (saved.hero) {
+    const bg = $('#heroBg');
+    bg.style.backgroundImage = 'url("' + saved.hero + '")';
+    bg.classList.add('has-image');
+  }
+
+  Object.keys(saved).forEach(k => {
+    if (k.indexOf('card:') !== 0) return;
+    const key  = k.slice(5);
+    const card = document.querySelector('.product-card[data-key="' + key + '"]');
+    if (!card) return;
+    const photo = card.querySelector('.product-photo');
+    if (photo) fillPhoto(photo, saved[k]);
+  });
+})();
+
+/* ─────────────────────────────────────────────
+   14. GLOBAL CLICK ROUTING
+───────────────────────────────────────────── */
+document.addEventListener('click', e => {
+  const open = e.target.closest('.photo-open');
+  if (open && !open.disabled) {
+    e.preventDefault();
+    openCardFrame(open.closest('.product-card'));
+    return;
+  }
+
+  const edit = e.target.closest('.photo-edit');
+  if (edit) {
+    e.preventDefault();
+    chooseImage({ kind: 'card', el: edit.closest('.product-photo') });
+    return;
+  }
+
+  const add = e.target.closest('.empty-add');
+  if (add) {
+    e.preventDefault();
+    chooseImage({ kind: 'card', el: add.closest('.product-photo') });
+  }
+});
+
+/* hero image open + hero photo edit */
+$('#heroOpen').addEventListener('click', () => {
+  const bg = $('#heroBg');
+  const bgImage = getComputedStyle(bg).backgroundImage;
+  const src = bgImage && bgImage !== 'none' ? bgImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '') : '';
+  if (!src) return;
+  openImageFrame({
+    items: [{
+      src:   src,
+      alt:   (CFG.hero && CFG.hero.imageAlt) || 'JEGOL Furniture',
+      title: (CFG.hero && CFG.hero.captionTitle) || 'JEGOL Furniture',
+      desc:  'JEGOL Furniture — hero photography, Harar showroom.'
+    }],
+    index: 0,
+    opener: $('#heroOpen')
+  });
+});
+
+$('#editHero').addEventListener('click', e => {
+  e.stopPropagation();
+  chooseImage({ kind: 'hero' });
+});
+
+/* ─────────────────────────────────────────────
+   15. SEARCH + CATEGORY FILTER
+───────────────────────────────────────────── */
+const totalOwn = D.reduce((n, c) => n + (c.own || []).length, 0);
+const totalRef = D.reduce((n, c) => n + (c.ref || []).length, 0);
+
+function applyFilters(){
+  const q   = $('#search').value.trim().toLowerCase();
+  const cat = $('#categoryFilter').value;
+  const filtering = !!q || !!cat;
+  let shown = 0;
+
+  $$('.product').forEach(sec => {
+    const catOk = !cat || sec.dataset.category === cat;
+    let matches = 0;
+
+    sec.querySelectorAll('.product-card').forEach(el => {
+      if (el.classList.contains('is-empty')) {
+        el.style.display = filtering ? 'none' : '';
+        return;
+      }
+      const text = (el.dataset.search || '').toLowerCase();
+      const ok = catOk && (!q || text.indexOf(q) !== -1);
+      el.style.display = ok ? '' : 'none';
+      if (ok) matches++;
+    });
+
+    const visible = matches > 0;
+    sec.style.display = visible ? '' : 'none';
+    if (visible) shown += matches;
+  });
+
+  $$('.gallery-group').forEach(g => {
+    const anyVisible = Array.prototype.some.call(
+      g.querySelectorAll('.product-card'), c => c.style.display !== 'none'
+    );
+    g.style.display = anyVisible ? '' : 'none';
+  });
+
+  $('#catalogCount').textContent = filtering
+    ? shown + ' ' + (shown === 1 ? 'design' : 'designs') + ' found'
+    : D.length + ' categories · ' + totalOwn + ' showroom designs · ' + totalRef + ' reference designs';
+
+  $('#noResults').style.display = shown ? 'none' : 'block';
+  $('#clearSearch').style.display = q ? '' : 'none';
+
+  /* highlight the matching preview card */
+  $$('.category-card').forEach(card => {
+    const on = !!cat && card.dataset.jump === cat;
+    card.classList.toggle('selected', on);
+  });
+}
+
+let searchTimer;
+$('#search').addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(applyFilters, 120);
+});
+
+$('#clearSearch').addEventListener('click', () => {
+  $('#search').value = '';
+  applyFilters();
+  $('#search').focus();
+});
+
+$('#categoryFilter').addEventListener('change', () => {
+  applyFilters();
+  const v = $('#categoryFilter').value;
+  if (v) {
+    const t = document.querySelector('#p-' + v);
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+/* Preview grid acts as jump nav + filter */
+$('#categories').addEventListener('click', e => {
+  const card = e.target.closest('[data-jump]');
+  if (!card) return;
+  const key = card.dataset.jump;
+  const sel = $('#categoryFilter');
+
+  if (!key) {
+    sel.value = '';
+    $('#search').value = '';
+    applyFilters();
+    return;
+  }
+
+  e.preventDefault();
+  sel.value = sel.value === key ? '' : key;
+  $('#search').value = '';
+  applyFilters();
+  const target = sel.value
+    ? document.querySelector('#p-' + sel.value)
+    : document.querySelector('#catalog');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+$('#downloadPdf').addEventListener('click', () => window.print());
+
+/* ─────────────────────────────────────────────
+   16. BROKEN-IMAGE FALLBACK
+───────────────────────────────────────────── */
+document.addEventListener('error', e => {
+  const img = e.target;
+  if (!img || img.tagName !== 'IMG') return;
+  const photo = img.closest('.product-photo');
+  if (!photo) return;
+
+  img.classList.add('is-broken');
+  const btn = img.closest('.photo-open');
+  if (btn) { btn.disabled = true; btn.setAttribute('aria-label', 'Image unavailable'); }
+
+  if (!photo.querySelector('.img-fallback')) {
+    const fb = document.createElement('div');
+    fb.className = 'img-fallback';
+    fb.textContent = 'Image unavailable';
+    photo.appendChild(fb);
+  }
+}, true);
+
+/* ─────────────────────────────────────────────
+   17. TOAST · ACTIVE NAV · BACK TO TOP
+───────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3600);
+}
+
+/* active category link in the menu (if any) */
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      $$('.menu a[data-nav]').forEach(a =>
+        a.classList.toggle('active', a.dataset.nav === entry.target.dataset.category)
+      );
+    });
+  }, { rootMargin: '-25% 0px -65% 0px' });
+  $$('.product').forEach(s => io.observe(s));
+}
+
+const topBtn = $('#toTop');
+window.addEventListener('scroll', () => {
+  topBtn.classList.toggle('show', window.scrollY > 600);
+}, { passive: true });
+topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ─────────────────────────────────────────────
+   18. INIT
+───────────────────────────────────────────── */
+applyFilters();
+
+/* Public API */
+window.JEGOL = {
+  config: CFG,
+  openImageFrame: openImageFrame,
+  applyFilters: applyFilters,
+  showToast: showToast
+};
+
+})();
+</script>
+</body>
+</html>
